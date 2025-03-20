@@ -1,0 +1,285 @@
+/* ===== Variables Globales ===== */
+:root {
+    --color-primary: #ff0000; /* Rojo */
+    --color-secondary: #000000; /* Negro */
+    --color-background: #ffffff; /* Blanco */
+    --color-text: #000000; /* Texto negro */
+    --color-text-light: #ffffff; /* Texto blanco */
+    --color-accent: #25d366; /* Verde de WhatsApp */
+    --font-primary: 'Poppins', sans-serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --gradient-primary: linear-gradient(45deg, #ff0000, #ff6f61);
+}
+
+/* ===== Reset y Estilos Generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== Encabezado ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.auth-buttons .btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Sección de Historial de Compras ===== */
+.historial {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.historial h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    animation: fadeIn 1s ease;
+}
+
+.compras-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.compra {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.compra:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.compra-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.compra-header h2 {
+    font-size: 24px;
+    color: var(--color-primary);
+}
+
+.compra-header .fecha {
+    font-size: 14px;
+    color: #666666;
+}
+
+.compra-detalle p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.compra-detalle ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.compra-detalle ul li {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+/* ===== Pie de Página ===== */
+.footer {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 50px 10%;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.enlaces-rapidos,
+.politicas {
+    flex: 1;
+}
+
+.enlaces-rapidos h3,
+.politicas h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.enlaces-rapidos ul,
+.politicas ul {
+    list-style: none;
+    padding: 0;
+}
+
+.enlaces-rapidos ul li,
+.politicas ul li {
+    margin-bottom: 5px;
+}
+
+.enlaces-rapidos ul li a,
+.politicas ul li a {
+    color: var(--color-text-light);
+    transition: var(--transition);
+}
+
+.enlaces-rapidos ul li a:hover,
+.politicas ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Media Queries (Responsive) ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .compra-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

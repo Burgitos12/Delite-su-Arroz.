@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito Completo</title>
+    <link rel="stylesheet" href="../css/carrito.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+
+        <!-- Lista de Productos -->
+        <div class="productos">
+            <div class="producto" data-id="1" data-nombre="Arroz con Pollo" data-precio="15.00">
+                <div class="producto-contenido">
+                    <h3>Arroz con Pollo</h3>
+                    <p>S/. 15.00</p>
+                    <button class="btn-agregar">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="producto" data-id="2" data-nombre="Lomo Saltado" data-precio="20.00">
+                <div class="producto-contenido">
+                    <h3>Lomo Saltado</h3>
+                    <p>S/. 20.00</p>
+                    <button class="btn-agregar">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="producto" data-id="3" data-nombre="Ceviche" data-precio="18.00">
+                <div class="producto-contenido">
+                    <h3>Ceviche</h3>
+                    <p>S/. 18.00</p>
+                    <button class="btn-agregar">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrito de Compras -->
+        <div class="carrito">
+            <h2>Tu Carrito</h2>
+            <ul id="lista-carrito">
+                <!-- Los productos agregados aparecerán aquí -->
+            </ul>
+            <p>Total: <span id="total">S/. 0.00</span></p>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+            <button id="pagar">Pagar</button>
+        </div>
+    </div>
+
+    <script src="../js/carrito.js"></script>
+</body>
+</html>

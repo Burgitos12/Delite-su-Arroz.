@@ -1,0 +1,41 @@
+📂 web_v1/  
+│── 📂 css/  
+│   │── home.css                # Estilos para index.html  
+│   │── blog.css                # Estilos para blog.html  
+│   │── reservas.css            # Estilos para reservas.html  
+│   │── contacto.css            # Estilos para contactanos.html  
+│   │── sobre-nosotros.css      # Estilos para sobre-nosotros.html  
+│   │── iniciar-seccion.css                # Estilos para iniciar-seccion.html
+│   │── registrarse.css                # Estilos para registrarse.html   
+│   │── recuperar-contraseña.css           # Estilos para olvide-mi-contrasena.html  
+│   │── carrito.css             # Estilos para carrito-de-compras.html
+│   │── menu.css             # Estilos para menu.html    
+│  
+│── 📂 html/  
+│   │── index.html                # Página de inicio  
+│   │── blog.html                 # Página del Blog  
+│   │── reservas.html             # Página de Reservas  
+│   │── contactanos.html          # Página de Contacto  
+│   │── sobre-nosotros.html       # Página Sobre Nosotros  
+│   │── iniciar-seccion.html      # Página de Inicio de Sesión  
+│   │── registrarse.html          # Página de Registro  
+│   │── olvide-mi-contrasena.html # Página para recuperar contraseña  
+│   │── carrito-de-compras.html   # Página del carrito de compras  
+│   │── menu.html                 # Página del menu
+│── 📂 js/  
+│   │── home.js                # Página de inicio  
+│   │── blog.js                 # Página del Blog  
+│   │── reservas.html             # Página de Reservas  
+│   │── contactanos.js          # Página de Contacto  
+│   │── sobre-nosotros.js       # Página Sobre Nosotros  
+│   │── iniciar-seccion.js      # Página de Inicio de Sesión  
+│   │── registrarse.js          # Página de Registro  
+│   │── olvide-mi-contrasena.js # Página para recuperar contraseña  
+│   │── carrito-de-compras.js   # Página del carrito de compras  
+│   │── menu.js                 # Página del menu
+│  
+│── 📂 img/                       # Imágenes organizadas  
+│── 📂 js/                        # Scripts de cada página  
+│── 📂 fonts/                     # Fuentes personalizadas  
+│── 📂 assets/                    # Archivos adicionales  
+│── README.md                     # Documentación del proyecto  

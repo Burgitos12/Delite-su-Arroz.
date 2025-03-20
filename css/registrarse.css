@@ -1,0 +1,259 @@
+/* ===== Variables Globales ===== */
+:root {
+    --color-primary: #ff0000; /* Rojo */
+    --color-secondary: #000000; /* Negro */
+    --color-background: #ffffff; /* Blanco */
+    --color-text: #000000; /* Texto negro */
+    --color-text-light: #ffffff; /* Texto blanco */
+    --font-primary: 'Poppins', sans-serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ===== Reset y Estilos Generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Fondo de Partículas ===== */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--color-background);
+}
+
+/* ===== Contenedor Principal ===== */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* ===== Botón para Volver ===== */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-back:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Ventana de Invitación ===== */
+.invitation-window {
+    background-color: var(--color-background);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+.invitation-card h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.invitation-card p {
+    font-size: 16px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.btn-invitation {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.btn-invitation:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Ventana de Registro ===== */
+.register-window {
+    background-color: var(--color-background);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease;
+}
+
+.register-card {
+    position: relative;
+}
+
+.register-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.register-header p {
+    font-size: 16px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+/* ===== Formulario de Registro ===== */
+.register-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--color-text);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.register-form button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.register-form button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Enlaces de Ayuda ===== */
+.register-links {
+    margin-top: 20px;
+}
+
+.register-links a {
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.register-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* ===== Pie de Página ===== */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.enlaces-rapidos a {
+    color: var(--color-text-light);
+    transition: var(--transition);
+}
+
+.enlaces-rapidos a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none;
+}

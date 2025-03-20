@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Blog - Deleite su Arroz</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
+            <h1>Deleite su Arroz</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="contactanos.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn">Registrarse</a>
+        </div>
+    </header>
+
+    <!-- Encabezado del Blog -->
+    <header class="blog-header">
+        <h1>Nuestro Blog</h1>
+        <p>Descubre el mundo del arroz</p>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar artículos...">
+            <button id="search-button">Buscar</button>
+        </div>
+        <div class="filters">
+            <span>Filtrar por categoría:</span>
+            <select id="category-filter">
+                <option value="">Todas</option>
+                <option value="recetas">Recetas</option>
+                <option value="historia">Historia</option>
+                <option value="nutricion">Nutrición</option>
+            </select>
+            <select id="order-filter">
+                <option value="">Ordenar por</option>
+                <option value="fecha-asc">Fecha (Más reciente)</option>
+                <option value="fecha-desc">Fecha (Más antiguo)</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="blog-content">
+        <!-- Lista de Artículos -->
+        <section class="article-list">
+            <article class="article" data-category="recetas">
+                <img src="../images/blog1.jpg" alt="Imagen del artículo 1">
+                <div class="article-info">
+                    <h2>Cómo hacer arroz perfecto</h2>
+                    <p class="meta">Publicado el 10/10/2023 por <span class="author">Juan Pérez</span></p>
+                    <p class="excerpt">Descubre cómo preparar el mejor arroz con pollo en casa con estos sencillos pasos.</p>
+                    <a href="#" class="read-more" data-modal="modal1">Leer más</a>
+                </div>
+            </article>
+            <article class="article" data-category="historia">
+                <img src="../images/blog2.jpg" alt="Imagen del artículo 2">
+                <div class="article-info">
+                    <h2>La historia del arroz</h2>
+                    <p class="meta">Publicado el 05/10/2023 por <span class="author">María Gómez</span></p>
+                    <p class="excerpt">La historia del arroz y su importancia en la gastronomía mundial.</p>
+                    <a href="#" class="read-more" data-modal="modal2">Leer más</a>
+                </div>
+            </article>
+            <article class="article" data-category="nutricion">
+                <img src="../images/blog3.jpg" alt="Imagen del artículo 3">
+                <div class="article-info">
+                    <h2>Beneficios del arroz integral</h2>
+                    <p class="meta">Publicado el 01/10/2023 por <span class="author">Carlos Ruiz</span></p>
+                    <p class="excerpt">Los beneficios nutricionales del arroz integral y cómo incorporarlo en tu dieta.</p>
+                    <a href="#" class="read-more" data-modal="modal3">Leer más</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <!-- Categorías -->
+            <div class="sidebar-box">
+                <h3>Categorías</h3>
+                <div class="categories-grid">
+                    <a href="#" class="category-link" data-category="recetas">Recetas</a>
+                    <a href="#" class="category-link" data-category="historia">Historia</a>
+                    <a href="#" class="category-link" data-category="nutricion">Nutrición</a>
+                </div>
+            </div>
+
+            <!-- Artículos más leídos -->
+            <div class="sidebar-box">
+                <h3>Artículos más leídos</h3>
+                <div class="popular-articles-grid">
+                    <a href="#" class="popular-link" data-modal="modal1">Cómo hacer arroz perfecto</a>
+                    <a href="#" class="popular-link" data-modal="modal2">La historia del arroz</a>
+                    <a href="#" class="popular-link" data-modal="modal3">Beneficios del arroz integral</a>
+                </div>
+            </div>
+
+            <!-- Síguenos -->
+            <div class="sidebar-box">
+                <h3>Síguenos</h3>
+                <div class="social-links-grid">
+                    <a href="https://www.facebook.com/DeleiteSuArroz/" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://wa.me/573223724043" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modales -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cómo hacer arroz perfecto</h2>
+            <p><strong>Descripción:</strong> Aprende a cocinar arroz esponjoso y delicioso con esta receta paso a paso.</p>
+            <p><strong>Ingredientes:</strong></p>
+            <ul>
+                <li>1 taza de arroz</li>
+                <li>2 tazas de agua</li>
+                <li>Sal al gusto</li>
+            </ul>
+            <p><strong>Instrucciones:</strong></p>
+            <ol>
+                <li>Lava el arroz hasta que el agua salga clara.</li>
+                <li>En una olla, agrega el arroz, el agua y la sal.</li>
+                <li>Cocina a fuego medio hasta que el agua se evapore.</li>
+                <li>Tapa la olla y deja reposar durante 5 minutos.</li>
+                <li>¡Sirve y disfruta!</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>La historia del arroz</h2>
+            <p><strong>Descripción:</strong> Desde sus orígenes en Asia hasta su expansión global.</p>
+            <p>El arroz es uno de los alimentos más antiguos y consumidos en el mundo. Se cree que su cultivo comenzó en China hace más de 7,000 años. Desde allí, se expandió a India, Japón y el resto del mundo. Hoy en día, el arroz es un alimento básico en más de 100 países.</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Beneficios del arroz integral</h2>
+            <p><strong>Descripción:</strong> Por qué el arroz integral es más saludable que el arroz blanco.</p>
+            <p>El arroz integral es una excelente fuente de fibra, vitaminas y minerales. A diferencia del arroz blanco, conserva su salvado y germen, lo que lo hace más nutritivo. Algunos de sus beneficios incluyen:</p>
+            <ul>
+                <li>Mejora la digestión.</li>
+                <li>Ayuda a controlar el peso.</li>
+                <li>Reduce el riesgo de enfermedades cardíacas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer class="blog-footer">
+        <div class="footer-content">
+            <div class="social-media">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/DeleiteSuArroz/" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://wa.me/573223724043" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            <div class="subscription">
+                <h3>Suscríbete a nuestro boletín</h3>
+                <form class="subscription-form">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>Email: info@deleitesuarroz.com</p>
+                <p>Teléfono: +57 322 3724043</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/blog.js"></script>
+</body>
+</html>

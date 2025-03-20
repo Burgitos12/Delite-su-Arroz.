@@ -1,0 +1,317 @@
+/* ===== Variables Globales ===== */
+:root {
+    --color-primary: #ff0000; /* Rojo */
+    --color-secondary: #000000; /* Negro */
+    --color-background: #ffffff; /* Blanco */
+    --color-text: #000000; /* Texto negro */
+    --color-text-light: #ffffff; /* Texto blanco */
+    --color-accent: #25d366; /* Verde de WhatsApp */
+    --font-primary: 'Poppins', sans-serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --gradient-primary: linear-gradient(45deg, #ff0000, #ff6f61);
+}
+
+/* ===== Reset y Estilos Generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== Encabezado ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.auth-buttons .btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Sección de Ofertas ===== */
+main {
+    padding: 20px 10%;
+}
+
+.oferta {
+    background-color: var(--color-background);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+}
+
+.oferta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.oferta:hover::before {
+    left: 100%;
+}
+
+.oferta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.4);
+}
+
+.oferta img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.oferta:hover img {
+    transform: scale(1.05);
+}
+
+.oferta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.oferta p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.btn-detalles {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-detalles:hover {
+    background-color: var(--color-secondary);
+    transform: scale(1.1);
+}
+
+/* ===== Modales ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modal-content {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--color-primary);
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.modal-content p, .modal-content ul {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.modal-content img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== Pie de Página ===== */
+footer {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== Media Queries (Responsive) ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav ul li {
+        margin: 10px 0;
+    }
+
+    .oferta {
+        padding: 15px;
+    }
+
+    .oferta h2 {
+        font-size: 1.5rem;
+    }
+
+    .oferta p {
+        font-size: 1rem;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

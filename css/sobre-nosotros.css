@@ -1,0 +1,464 @@
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== Estilos generales ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #cc0000;
+}
+
+/* ===== Encabezado ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.auth-buttons .btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* Nueva animación del logo al pasar el puntero */
+.logo img:hover {
+    transform: rotate(15deg) scale(1.1);
+    opacity: 0.8;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin-left: 20px;
+}
+
+.nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #ffffff;
+}
+
+.auth-buttons .btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #cc0000;
+}
+
+/* ===== Sección de Sobre Nosotros ===== */
+.sobre-nosotros-hero {
+    text-align: center;
+    padding: 150px 20px;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre-nosotros-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.sobre-nosotros-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1.5s ease;
+}
+
+.sobre-nosotros-hero p {
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* ===== Nuestra Historia ===== */
+.nuestra-historia {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.nuestra-historia h2 {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.nuestra-historia p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 2.5s ease;
+}
+
+/* ===== Misión y Visión ===== */
+.mision-vision {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.mision, .vision {
+    text-align: center;
+    max-width: 400px;
+    animation: fadeIn 2s ease;
+}
+
+.mision h2, .vision h2 {
+    font-size: 28px;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.mision p, .vision p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== Nuestro Compromiso ===== */
+.compromiso {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.compromiso h2 {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.compromiso ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 2.5s ease;
+}
+
+.compromiso ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ===== Equipo de Trabajo ===== */
+.equipo {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.equipo h2 {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.equipo-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    max-width: 300px;
+    margin: 20px;
+    animation: fadeInUp 2s ease;
+}
+
+.miembro img {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #ff0000;
+    transition: transform 0.3s ease;
+}
+
+.miembro img:hover {
+    transform: scale(1.1);
+}
+
+.miembro h3 {
+    font-size: 24px;
+    color: #ff0000;
+    margin: 10px 0;
+}
+
+.miembro p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== Testimonios de Clientes ===== */
+.testimonios {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 36px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.testimonios-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonio {
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    animation: fadeInUp 2s ease;
+}
+
+.testimonio p {
+    font-size: 16px;
+    color: #333;
+}
+
+.testimonio .autor {
+    font-size: 14px;
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+.testimonio .rating {
+    font-size: 18px;
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+/* ===== Llamado a la Acción ===== */
+.cta {
+    padding: 80px 20px;
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #cc0000);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.cta h2 {
+    font-size: 36px;
+    color: #fff; /* Texto blanco */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease;
+}
+
+.cta .btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.cta .btn:hover {
+    background-color: #cc0000;
+}
+
+/* ===== Pie de Página ===== */
+.footer {
+    padding: 20px;
+    background-color: #000; /* Fondo negro */
+    text-align: center;
+    color: #fff; /* Texto blanco */
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #cc0000);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.enlaces-rapidos, .redes-sociales {
+    max-width: 300px;
+    margin: 20px;
+}
+
+/* Contenedor de enlaces negro */
+.enlaces-rapidos {
+    background-color: #000; /* Fondo negro */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.enlaces-rapidos h3, .redes-sociales h3 {
+    font-size: 24px;
+    color: #ff0000; /* Texto rojo */
+    margin-bottom: 10px;
+}
+
+.enlaces-rapidos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.enlaces-rapidos ul li {
+    margin-bottom: 10px;
+}
+
+.enlaces-rapidos ul li a {
+    color: #fff; /* Texto blanco */
+}
+
+.enlaces-rapidos ul li a:hover {
+    color: #ff0000; /* Texto rojo al pasar el mouse */
+}
+
+.redes-sociales a {
+    display: block;
+    color: #fff; /* Texto blanco */
+    margin-bottom: 10px;
+}
+
+.redes-sociales a:hover {
+    color: #ff0000; /* Texto rojo al pasar el mouse */
+}

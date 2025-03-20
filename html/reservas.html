@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Deleite su Arroz</title>
+    <link rel="stylesheet" href="../css/reservas.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="logo">
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
+            <h1>Deleite su Arroz</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="contactanos.html">Contacto</a></li>
+                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn">Registrarse</a>
+        </div>
+    </header>
+
+    <!-- Sección de Reserva tu Pedido -->
+    <section class="reservas-hero">
+        <h1>Reserva tu pedido</h1>
+        <p>Agenda tu pedido con anticipación y disfruta de nuestro arroz en el momento perfecto.</p>
+    </section>
+
+    <!-- Formulario de Reserva -->
+    <section class="reserva-form">
+        <h2>Formulario de Reserva</h2>
+        <form id="reservaForm">
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="contacto">Número de contacto:</label>
+                <input type="tel" id="contacto" name="contacto" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico (Opcional):</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha y hora de la reserva:</label>
+                <input type="datetime-local" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo-arroz">Seleccionar tipo de arroz:</label>
+                <select id="tipo-arroz" name="tipo-arroz" required>
+                    <option value="arroz-con-pollo">Arroz con Pollo</option>
+                    <option value="arroz-marinero">Arroz Marinero</option>
+                    <option value="arroz-vegetariano">Arroz Vegetariano</option>
+                    <option value="arroz-integral">Arroz Integral</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="comentarios">Comentarios o especificaciones adicionales:</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="metodo-pago">Método de pago:</label>
+                <select id="metodo-pago" name="metodo-pago">
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Reservar Ahora</button>
+        </form>
+    </section>
+
+    <!-- Información Adicional -->
+    <section class="info-adicional">
+        <h2>Información Adicional</h2>
+        <p>Para consultas, contáctanos al <strong>+123 456 789</strong></p>
+        <p>Síguenos en nuestras redes sociales:</p>
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>Consulta nuestras <a href="#">políticas de reserva y cancelación</a>.</p>
+
+        <div class="enlaces-rapidos">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="contactanos.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="enlaces-rapidos">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="redes-sociales">
+                <h3>Redes Sociales</h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/reservas.js"></script>
+</body>
+</html>

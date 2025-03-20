@@ -1,0 +1,448 @@
+/* ===== Variables Globales ===== */
+:root {
+    --color-primary: #ff0000; /* Rojo */
+    --color-secondary: #000000; /* Negro */
+    --color-background: #ffffff; /* Blanco */
+    --color-text: #000000; /* Texto negro */
+    --color-text-light: #ffffff; /* Texto blanco */
+    --color-accent: #25d366; /* Verde de WhatsApp */
+    --font-primary: 'Poppins', sans-serif;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --gradient-primary: linear-gradient(45deg, #ff0000, #ff6f61);
+}
+
+/* ===== Reset y Estilos Generales ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== Encabezado ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav ul li a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.auth-buttons .btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Banner Principal ===== */
+.hero {
+    background: url('../imagenes/banner.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-light);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    animation: fadeIn 1s ease;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.hero-content .btn:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Sección de Destacados ===== */
+.featured-products {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    animation: fadeIn 1s ease;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: var(--color-primary);
+}
+
+.product p {
+    font-size: 14px;
+    color: #666666;
+}
+
+.product .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.product .btn {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    margin-top: 20px;
+}
+
+/* ===== Sección de Ofertas ===== */
+.promotions {
+    padding: 50px 10%;
+    background: var(--gradient-primary);
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+}
+
+.promotions h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+    animation: fadeIn 1s ease;
+}
+
+.promo-banners .banner {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.promo-banners .banner p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+.promo-banners .banner .btn {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+}
+
+/* ===== Testimonios ===== */
+.testimonials {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    animation: fadeIn 1s ease;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.testimonial .author {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.testimonial .rating {
+    color: var(--color-primary);
+}
+
+/* ===== Ubicación y Contacto ===== */
+.location-contact {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.location-contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+    animation: fadeIn 1s ease;
+}
+
+.map {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info .btn-whatsapp {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+}
+
+/* ===== Pie de Página ===== */
+.footer {
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 50px 10%;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.social-media,
+.subscription,
+.contact-info {
+    flex: 1;
+}
+
+.social-media a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+}
+
+.subscription-form {
+    display: flex;
+    gap: 10px;
+}
+
+.subscription-form input {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    flex: 1;
+}
+
+.subscription-form button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.subscription-form button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Media Queries (Responsive) ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .product-grid,
+    .testimonial-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
