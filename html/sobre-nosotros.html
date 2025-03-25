@@ -3,132 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="titulo">Sobre Nosotros - Deleite su Arroz</title>
+    <title>Sobre Nosotros - Deleite su Arroz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/sobre-nosotros.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
+
     <!-- Encabezado -->
     <header class="header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+            <h1 class="logo-text">Deleite su Arroz</h1>
         </div>
         <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="home.html">Inicio</a></li>
+                <li class="nav-item"><a href="menu.html">Menú</a></li>
+                <li class="nav-item"><a href="blog.html">Blog</a></li>
+                <li class="nav-item"><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                <li class="nav-item"><a href="reservas.html">Reservas</a></li>
+                <li class="nav-item"><a href="contactanos.html">Contacto</a></li>
+                <li class="nav-item active"><a href="sobre-nosotros.html">Sobre nosotros</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
         <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
+            <a href="iniciar-seccion.html" class="btn login-btn">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn register-btn">Registrarse</a>
         </div>
     </header>
 
-    <!-- Sección de Sobre Nosotros -->
-    <section class="sobre-nosotros-hero">
-        <h1>Sobre Nosotros</h1>
-        <p>Conoce nuestra historia, misión y pasión por el arroz.</p>
+    <!-- Sección Hero -->
+    <section class="sobre-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Nuestra Historia</h1>
+            <p class="hero-subtitle">Conoce la pasión y dedicación detrás de cada grano de arroz</p>
+            <div class="scroll-down">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                </div>
+            </div>
+        </div>
+        <div class="floating-ingredients">
+            <img src="../images/ingredient1.png" alt="Ingrediente" class="floating-item" style="--delay: 0s; --duration: 15s; --start-y: -10%;">
+            <img src="../images/ingredient2.png" alt="Ingrediente" class="floating-item" style="--delay: 2s; --duration: 18s; --start-y: -15%;">
+            <img src="../images/ingredient3.png" alt="Ingrediente" class="floating-item" style="--delay: 4s; --duration: 20s; --start-y: -20%;">
+        </div>
     </section>
 
     <!-- Nuestra Historia -->
-    <section class="nuestra-historia">
-        <h2>Nuestra Historia</h2>
-        <p>Todo comenzó en 2010, cuando nuestro fundador, Juan Pérez, decidió compartir su amor por el arroz con el mundo. Inspirado por las recetas familiares y los sabores auténticos, abrió un pequeño local en el corazón de la ciudad. Con el tiempo, "Deleite su Arroz" se convirtió en un referente de calidad y sabor, gracias a la dedicación y el compromiso de todo el equipo.</p>
+    <section class="historia-section">
+        <div class="historia-container">
+            <div class="historia-content">
+                <h2 class="section-title">Desde 2010 deleitando paladares</h2>
+                <p class="historia-text">Todo comenzó como un pequeño sueño en la cocina de Juan Pérez, nuestro fundador. Inspirado por las recetas familiares transmitidas por generaciones, decidió compartir su amor por el arroz con el mundo. Lo que empezó como un modesto local, hoy es un referente gastronómico gracias a nuestra dedicación y pasión por la autenticidad.</p>
+                <div class="historia-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="13">0</span>
+                        <span class="stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="50000">0</span>
+                        <span class="stat-label">Clientes satisfechos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Variedades de arroz</span>
+                    </div>
+                </div>
+            </div>
+            <div class="historia-image">
+                <img src="../images/historia.jpg" alt="Fundador de Deleite su Arroz" class="historia-img">
+                <div class="image-overlay"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Misión y Visión -->
-    <section class="mision-vision">
-        <div class="mision">
-            <h2>Misión</h2>
-            <p>Brindar los mejores arroces con ingredientes de calidad y sabor auténtico, ofreciendo una experiencia culinaria única a nuestros clientes.</p>
-        </div>
-        <div class="vision">
-            <h2>Visión</h2>
-            <p>Ser el referente en comida de arroz en la región, reconocidos por nuestra excelencia en servicio y calidad.</p>
-        </div>
-    </section>
-
-    <!-- Nuestro Compromiso -->
-    <section class="compromiso">
-        <h2>Nuestro Compromiso</h2>
-        <ul>
-            <li>Usamos ingredientes frescos y de alta calidad en cada plato.</li>
-            <li>Garantizamos la satisfacción de nuestros clientes con un servicio excepcional.</li>
-            <li>Innovamos constantemente para ofrecer nuevas y deliciosas opciones.</li>
-        </ul>
-    </section>
-
-    <!-- Equipo de Trabajo (Opcional) -->
-    <section class="equipo">
-        <h2>Nuestro Equipo</h2>
-        <div class="equipo-grid">
-            <div class="miembro">
-                <img src="../images/juan.jpg" alt="Juan Pérez">
-                <h3>Juan Pérez</h3>
-                <p>Fundador y Chef Principal</p>
+    <section class="mision-vision-section">
+        <div class="mision-vision-container">
+            <div class="mision-card">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Misión</h3>
+                <p>Ofrecer los mejores arroces con ingredientes frescos y técnicas tradicionales, creando experiencias culinarias memorables que celebren la diversidad de sabores y la pasión por la buena comida.</p>
             </div>
-            <div class="miembro">
-                <img src="../images/maria.jpg" alt="María Gómez">
-                <h3>María Gómez</h3>
-                <p>Gerente de Operaciones</p>
-            </div>
-            <div class="miembro">
-                <img src="../images/carlos.jpg" alt="Carlos Ruiz">
-                <h3>Carlos Ruiz</h3>
-                <p>Especialista en Arroces</p>
+            <div class="vision-card">
+                <div class="card-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Visión</h3>
+                <p>Ser reconocidos como el referente en gastronomía de arroz a nivel nacional, expandiendo nuestro legado culinario mientras mantenemos la esencia artesanal que nos distingue.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios de Clientes (Opcional) -->
-    <section class="testimonios">
-        <h2>Testimonios de Clientes</h2>
-        <div class="testimonios-grid">
-            <div class="testimonio">
-                <p>"El mejor arroz que he probado. ¡Totalmente recomendado!"</p>
-                <p class="autor">- María G.</p>
-                <p class="rating">★★★★★</p>
+    <!-- Nuestros Valores -->
+    <section class="valores-section">
+        <h2 class="section-title">Nuestros Valores</h2>
+        <div class="valores-container">
+            <div class="valor-card">
+                <div class="valor-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Pasión</h3>
+                <p>Cada grano de arroz se prepara con el mismo amor y dedicación que pusimos en nuestro primer plato.</p>
             </div>
-            <div class="testimonio">
-                <p>"Rápido, delicioso y a buen precio. ¡Volveré a pedir!"</p>
-                <p class="autor">- Juan P.</p>
-                <p class="rating">★★★★★</p>
+            <div class="valor-card">
+                <div class="valor-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Calidad</h3>
+                <p>Seleccionamos los mejores ingredientes locales para garantizar autenticidad y frescura en cada bocado.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Comunidad</h3>
+                <p>Creemos en construir relaciones duraderas con nuestros clientes, proveedores y colaboradores.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovación</h3>
+                <p>Respetamos la tradición mientras exploramos nuevas formas de sorprender tu paladar.</p>
             </div>
         </div>
     </section>
 
-    <!-- Llamado a la Acción -->
-    <section class="cta">
-        <h2>¿Listo para disfrutar de nuestro arroz?</h2>
-        <a href="menu.html" class="btn">Explora nuestro menú</a>
+    <!-- Nuestro Equipo -->
+    <section class="equipo-section">
+        <h2 class="section-title">Conoce a nuestro equipo</h2>
+        <p class="section-subtitle">Los talentosos chefs y profesionales detrás de cada creación</p>
+        
+        <div class="equipo-container">
+            <div class="equipo-slider">
+                <div class="miembro-card">
+                    <div class="miembro-image">
+                        <img src="../images/juan.jpg" alt="Juan Pérez">
+                        <div class="miembro-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="miembro-info">
+                        <h3>Juan Pérez</h3>
+                        <p>Fundador & Chef Ejecutivo</p>
+                        <p class="miembro-bio">Con más de 20 años de experiencia, Juan ha dedicado su vida a perfeccionar el arte del arroz, fusionando técnicas tradicionales con toques innovadores.</p>
+                    </div>
+                </div>
+                
+                <div class="miembro-card">
+                    <div class="miembro-image">
+                        <img src="../images/maria.jpg" alt="María Gómez">
+                        <div class="miembro-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="miembro-info">
+                        <h3>María Gómez</h3>
+                        <p>Gerente de Operaciones</p>
+                        <p class="miembro-bio">María asegura que cada aspecto de nuestro restaurante funcione a la perfección, desde la calidad del servicio hasta la experiencia del cliente.</p>
+                    </div>
+                </div>
+                
+                <div class="miembro-card">
+                    <div class="miembro-image">
+                        <img src="../images/carlos.jpg" alt="Carlos Ruiz">
+                        <div class="miembro-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="miembro-info">
+                        <h3>Carlos Ruiz</h3>
+                        <p>Especialista en Arroces</p>
+                        <p class="miembro-bio">Carlos domina más de 50 variedades de arroz de todo el mundo, creando platos que son verdaderas obras maestras gastronómicas.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </section>
 
-    <!-- Pie de Página -->
+    <!-- Testimonios -->
+    <section class="testimonios-section">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-subtitle">Experiencias reales de quienes han disfrutado de nuestro arroz</p>
+        
+        <div class="testimonios-container">
+            <div class="testimonio-card">
+                <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonio-text">"El mejor arroz que he probado en mi vida. La textura perfecta y los sabores son increíbles. ¡Volveré una y otra vez!"</p>
+                <div class="testimonio-author">
+                    <img src="../images/cliente1.jpg" alt="María González">
+                    <div>
+                        <h4>María González</h4>
+                        <p>Cliente frecuente</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonio-card">
+                <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="testimonio-text">"Celebramos nuestro aniversario aquí y fue mágico. El servicio impecable y el arroz marinero es para morirse."</p>
+                <div class="testimonio-author">
+                    <img src="../images/cliente2.jpg" alt="Juan Martínez">
+                    <div>
+                        <h4>Juan Martínez</h4>
+                        <p>Desde 2015</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonio-card">
+                <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonio-text">"Como food blogger he probado arroces en todo el país, pero ninguno se compara con los de Deleite su Arroz. ¡Simplemente perfectos!"</p>
+                <div class="testimonio-author">
+                    <img src="../images/cliente3.jpg" alt="Laura Sánchez">
+                    <div>
+                        <h4>Laura Sánchez</h4>
+                        <p>Bloguera gastronómica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>¿Listo para vivir la experiencia Deleite su Arroz?</h2>
+            <p>Reserva tu mesa o pide para llevar y descubre por qué somos los maestros del arroz</p>
+            <div class="cta-buttons">
+                <a href="reservas.html" class="cta-btn primary">Reservar ahora</a>
+                <a href="menu.html" class="cta-btn secondary">Ver menú</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="enlaces-rapidos">
-                <h3>Enlaces Rápidos</h3>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../images/logo-white.png" alt="Logo Deleite su Arroz">
+                <h3>Deleite su Arroz</h3>
+                <p>El mejor arroz de la ciudad, hecho con amor y tradición.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces</h4>
                 <ul>
+                    <li><a href="home.html">Inicio</a></li>
                     <li><a href="menu.html">Menú</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
                     <li><a href="contactanos.html">Contacto</a></li>
                 </ul>
             </div>
-            <div class="redes-sociales">
-                <h3>Redes Sociales</h3>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Principal #123, Ciudad</p>
+                <p><i class="fas fa-phone-alt"></i> +123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@deleitesuarroz.com</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Redes Sociales</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Deleite su Arroz. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
             </div>
         </div>
     </footer>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/123456789" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de volver arriba -->
+    <button class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="../js/sobre-nosotros.js"></script>
 </body>
 </html>

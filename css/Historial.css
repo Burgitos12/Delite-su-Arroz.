@@ -1,285 +1,351 @@
-/* ===== Variables Globales ===== */
+/* ============================================= */
+/* ============ VARIABLES GLOBALES ============ */
+/* ============================================= */
 :root {
-    --color-primary: #ff0000; /* Rojo */
-    --color-secondary: #000000; /* Negro */
-    --color-background: #ffffff; /* Blanco */
-    --color-text: #000000; /* Texto negro */
-    --color-text-light: #ffffff; /* Texto blanco */
-    --color-accent: #25d366; /* Verde de WhatsApp */
-    --font-primary: 'Poppins', sans-serif;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
-    --gradient-primary: linear-gradient(45deg, #ff0000, #ff6f61);
+    /* Paleta de colores principal */
+    --color-primary: #ff0000;       /* Color primario (rojo) para botones y acentos */
+    --color-secondary: #000000;     /* Color secundario (negro) para fondos y textos */
+    --color-background: #ffffff;    /* Color de fondo principal (blanco) */
+    --color-text: #000000;          /* Color de texto principal (negro) */
+    --color-text-light: #ffffff;    /* Color de texto claro (blanco) para contrastar */
+    --color-accent: #25d366;        /* Color de acento (verde WhatsApp) */
+    
+    /* Configuración tipográfica */
+    --font-primary: 'Poppins', sans-serif;  /* Familia tipográfica principal */
+    
+    /* Efectos visuales */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra predeterminada */
+    --transition: all 0.3s ease;             /* Transición suave para efectos hover */
+    --gradient-primary: linear-gradient(45deg, #ff0000, #ff6f61); /* Degradado rojo */
 }
 
-/* ===== Reset y Estilos Generales ===== */
+/* ============================================= */
+/* ============ RESET Y ESTILOS BASE ========== */
+/* ============================================= */
+
+/* Reset universal para eliminar márgenes y padding predeterminados */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;          /* Elimina todos los márgenes externos */
+    padding: 0;         /* Elimina todos los rellenos internos */
+    box-sizing: border-box; /* Modelo de caja más intuitivo */
 }
 
+/* Estilos base del cuerpo del documento */
 body {
-    font-family: var(--font-primary);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    line-height: 1.6;
+    font-family: var(--font-primary);  /* Establece la fuente principal */
+    background-color: var(--color-background); /* Color de fondo de la página */
+    color: var(--color-text);         /* Color del texto principal */
+    line-height: 1.6;                /* Espaciado entre líneas mejorado */
 }
 
+/* Estilos base para enlaces */
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none;  /* Elimina el subrayado predeterminado */
+    color: inherit;         /* Hereda el color del elemento padre */
 }
 
+/* Estilos base para imágenes */
 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    max-width: 100%;       /* Asegura que no excedan el ancho del contenedor */
+    height: auto;          /* Mantiene las proporciones originales */
+    border-radius: 10px;   /* Esquinas redondeadas para todas las imágenes */
 }
 
-/* ===== Encabezado ===== */
+/* ============================================= */
+/* ============== ENCABEZADO ================== */
+/* ============================================= */
+
+/* Contenedor principal del header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: var(--color-secondary);
-    color: var(--color-text-light);
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    display: flex;                      /* Diseño flexible */
+    justify-content: space-between;     /* Espacio entre elementos */
+    align-items: center;                /* Centrado vertical */
+    padding: 20px 10%;                 /* Relleno interno generoso */
+    background-color: var(--color-secondary); /* Fondo negro */
+    color: var(--color-text-light);     /* Texto blanco */
+    box-shadow: var(--shadow);          /* Sombra sutil */
+    position: sticky;                   /* Header pegajoso */
+    top: 0;                            /* Pegado al tope */
+    z-index: 1000;                     /* Asegura que esté por encima */
 }
 
+/* Estilos para el logo y marca */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex;              /* Diseño flexible para alinear logo y texto */
+    align-items: center;        /* Centrado vertical */
+    gap: 10px;                 /* Espacio entre logo y texto */
 }
 
 .logo img {
-    width: 50px;
-    transition: var(--transition);
+    width: 50px;               /* Tamaño fijo para el logo */
+    transition: var(--transition); /* Transición suave para efectos */
 }
 
+/* Efecto hover para el logo */
 .logo img:hover {
-    transform: rotate(360deg);
+    transform: rotate(360deg);  /* Rotación completa al pasar el mouse */
 }
 
 .logo h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 24px;           /* Tamaño del texto del logo */
+    font-weight: 700;          /* Grosor de la fuente (bold) */
 }
 
+/* Navegación principal */
 .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+    list-style: none;          /* Elimina las viñetas */
+    display: flex;             /* Diseño en línea */
+    gap: 20px;                /* Espacio entre elementos */
 }
 
+/* Estilos para los enlaces de navegación */
 .nav ul li a {
-    font-weight: 500;
-    transition: var(--transition);
-    position: relative;
+    font-weight: 500;          /* Grosor de fuente semibold */
+    transition: var(--transition); /* Transición suave */
+    position: relative;        /* Para el efecto hover */
 }
 
+/* Efecto hover para enlaces de navegación */
 .nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-primary);
-    bottom: -5px;
-    left: 0;
-    transition: var(--transition);
+    content: '';               /* Pseudo-elemento necesario */
+    position: absolute;        /* Posicionamiento absoluto */
+    width: 0;                  /* Inicialmente sin ancho */
+    height: 2px;               /* Altura de la línea */
+    background-color: var(--color-primary); /* Color rojo */
+    bottom: -5px;              /* Posición debajo del enlace */
+    left: 0;                   /* Alineado a la izquierda */
+    transition: var(--transition); /* Transición suave */
 }
 
+/* Efecto hover completo */
 .nav ul li a:hover::after {
-    width: 100%;
+    width: 100%;              /* Línea completa al pasar el mouse */
 }
 
+/* Contenedor de botones de autenticación */
 .auth-buttons {
-    display: flex;
-    gap: 10px;
+    display: flex;            /* Diseño flexible */
+    gap: 10px;               /* Espacio entre botones */
 }
 
+/* Estilo base para botones */
 .auth-buttons .btn {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: var(--transition);
+    background-color: var(--color-primary); /* Fondo rojo */
+    color: var(--color-text-light);        /* Texto blanco */
+    padding: 10px 20px;                   /* Relleno interno */
+    border-radius: 25px;                  /* Bordes redondeados */
+    font-weight: 600;                     /* Grosor de fuente semibold */
+    transition: var(--transition);        /* Transición suave */
 }
 
+/* Efecto hover para botones */
 .auth-buttons .btn:hover {
-    background-color: var(--color-secondary);
-    transform: translateY(-3px);
+    background-color: var(--color-secondary); /* Fondo negro */
+    transform: translateY(-3px);          /* Efecto de elevación */
 }
 
-/* ===== Sección de Historial de Compras ===== */
+/* ============================================= */
+/* ======= SECCIÓN HISTORIAL DE COMPRAS ======= */
+/* ============================================= */
+
+/* Contenedor principal del historial */
 .historial {
-    padding: 50px 10%;
-    text-align: center;
+    padding: 50px 10%;        /* Relleno interno generoso */
+    text-align: center;        /* Texto centrado */
 }
 
+/* Título principal del historial */
 .historial h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: var(--color-primary);
-    animation: fadeIn 1s ease;
+    font-size: 36px;          /* Tamaño destacado */
+    margin-bottom: 30px;      /* Espaciado inferior */
+    color: var(--color-primary); /* Color rojo */
+    animation: fadeIn 1s ease; /* Animación de entrada */
 }
 
+/* Lista de compras */
 .compras-lista {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex;              /* Diseño flexible */
+    flex-direction: column;     /* Disposición en columna */
+    gap: 20px;                 /* Espacio entre elementos */
 }
 
+/* Tarjeta de compra individual */
 .compra {
-    background-color: var(--color-background);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    background-color: var(--color-background); /* Fondo blanco */
+    padding: 20px;                           /* Relleno interno */
+    border-radius: 10px;                     /* Bordes redondeados */
+    box-shadow: var(--shadow);               /* Sombra sutil */
+    transition: var(--transition);           /* Transición suave */
 }
 
+/* Efecto hover para tarjetas de compra */
 .compra:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);            /* Elevación suave */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
+/* Encabezado de la compra (fecha y título) */
 .compra-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+    display: flex;              /* Diseño flexible */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center;        /* Centrado vertical */
+    margin-bottom: 15px;       /* Espaciado inferior */
 }
 
+/* Título de la compra */
 .compra-header h2 {
-    font-size: 24px;
-    color: var(--color-primary);
+    font-size: 24px;           /* Tamaño destacado */
+    color: var(--color-primary); /* Color rojo */
 }
 
+/* Fecha de la compra */
 .compra-header .fecha {
-    font-size: 14px;
-    color: #666666;
+    font-size: 14px;           /* Tamaño pequeño */
+    color: #666666;            /* Color gris para menos énfasis */
 }
 
+/* Detalles de la compra */
 .compra-detalle p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 16px;           /* Tamaño legible */
+    margin-bottom: 10px;       /* Espaciado inferior */
 }
 
+/* Lista de productos comprados */
 .compra-detalle ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 15px;
+    list-style: none;          /* Elimina viñetas */
+    padding: 0;                /* Elimina relleno predeterminado */
+    margin-bottom: 15px;       /* Espaciado inferior */
 }
 
+/* Elementos individuales de la lista */
 .compra-detalle ul li {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 5px;
+    font-size: 14px;           /* Tamaño pequeño */
+    color: #666666;            /* Color gris para menos énfasis */
+    margin-bottom: 5px;        /* Espaciado inferior */
 }
 
-/* ===== Pie de Página ===== */
+/* ============================================= */
+/* ============ PIE DE PÁGINA ================ */
+/* ============================================= */
+
+/* Contenedor del footer */
 .footer {
-    background-color: var(--color-secondary);
-    color: var(--color-text-light);
-    padding: 50px 10%;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    background-color: var(--color-secondary); /* Fondo negro */
+    color: var(--color-text-light);          /* Texto blanco */
+    padding: 50px 10%;                      /* Relleno interno generoso */
+    text-align: center;                      /* Texto centrado */
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); /* Forma recortada */
 }
 
+/* Contenido del footer */
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    display: flex;              /* Diseño flexible */
+    justify-content: space-between; /* Espacio entre columnas */
+    gap: 20px;                 /* Espacio entre elementos */
 }
 
+/* Columnas del footer */
 .enlaces-rapidos,
 .politicas {
-    flex: 1;
+    flex: 1;  /* Ocupan igual espacio */
 }
 
+/* Títulos de las columnas */
 .enlaces-rapidos h3,
 .politicas h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: var(--color-primary);
+    font-size: 24px;           /* Tamaño destacado */
+    margin-bottom: 10px;       /* Espaciado inferior */
+    color: var(--color-primary); /* Color rojo */
 }
 
+/* Listas de enlaces */
 .enlaces-rapidos ul,
 .politicas ul {
-    list-style: none;
-    padding: 0;
+    list-style: none;          /* Elimina viñetas */
+    padding: 0;                /* Elimina relleno predeterminado */
 }
 
+/* Elementos de la lista */
 .enlaces-rapidos ul li,
 .politicas ul li {
-    margin-bottom: 5px;
+    margin-bottom: 5px;        /* Espaciado inferior */
 }
 
+/* Enlaces del footer */
 .enlaces-rapidos ul li a,
 .politicas ul li a {
-    color: var(--color-text-light);
-    transition: var(--transition);
+    color: var(--color-text-light); /* Texto blanco */
+    transition: var(--transition); /* Transición suave */
 }
 
+/* Efecto hover para enlaces */
 .enlaces-rapidos ul li a:hover,
 .politicas ul li a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary); /* Color rojo */
 }
 
-/* ===== Animaciones ===== */
+/* ============================================= */
+/* ============= ANIMACIONES ================== */
+/* ============================================= */
+
+/* Animación de aparición suave */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; }   /* Inicio transparente */
+    to { opacity: 1; }     /* Final opaco */
 }
 
+/* Animación de aparición desde arriba */
 @keyframes fadeInDown {
     from {
-        opacity: 0;
-        transform: translateY(-20px);
+        opacity: 0;        /* Inicio transparente */
+        transform: translateY(-20px); /* Posición arriba */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;        /* Final opaco */
+        transform: translateY(0); /* Posición normal */
     }
 }
 
+/* Animación de aparición desde abajo */
 @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 0;        /* Inicio transparente */
+        transform: translateY(20px); /* Posición abajo */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;        /* Final opaco */
+        transform: translateY(0); /* Posición normal */
     }
 }
 
-/* ===== Media Queries (Responsive) ===== */
+/* ============================================= */
+/* ============ MEDIA QUERIES ================= */
+/* ============================================= */
+
+/* Estilos para pantallas pequeñas (hasta 768px) */
 @media (max-width: 768px) {
+    /* Header en columna */
     .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+        flex-direction: column;  /* Apila elementos verticalmente */
+        text-align: center;      /* Centrado de texto */
+        gap: 20px;              /* Espacio entre elementos */
     }
 
+    /* Navegación en columna */
     .nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column;  /* Apila enlaces verticalmente */
+        gap: 10px;              /* Espacio reducido */
     }
 
+    /* Encabezado de compra en columna */
     .compra-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column;  /* Apila elementos verticalmente */
+        align-items: flex-start;  /* Alineación a la izquierda */
     }
 
+    /* Footer en columna */
     .footer-content {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: column;  /* Apila columnas verticalmente */
+        gap: 20px;              /* Espacio entre elementos */
     }
 }

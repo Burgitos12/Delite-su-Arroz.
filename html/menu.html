@@ -4,173 +4,263 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestro Menú - Deleite su Arroz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="../css/menu.css">
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573223724043" class="whatsapp-float animate__animated animate__bounceInUp animate__delay-2s">
+        <i class="fab fa-whatsapp"></i>
+        <span>Ordenar ahora</span>
+    </a>
+
+    <!-- Botón flotante del Historial -->
+    <a href="historial.html" class="history-float animate__animated animate__bounceInUp animate__delay-2s">
+        <i class="fas fa-history"></i>
+        <span class="history-badge">Historial</span>
+    </a>
+
     <!-- Encabezado -->
     <header class="header">
-        <div class="logo">
-            <img src="../imagenes/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </nav>
-        <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
-            <!-- Icono de Carrito -->
-            <a href="carrito.html" class="btn btn-carrito">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="carrito-contador">0</span>
-            </a>
-            <!-- Botón de Historial -->
-            <a href="historial.html" class="btn btn-historial">
-                <i class="fas fa-history"></i> Historial
-            </a>
+        <div class="container">
+            <!-- Logo y Título -->
+            <div class="logo">
+                <a href="home.html">
+                    <img src="../imagenes/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+                    <h1 class="logo-text">Deleite su Arroz</h1>
+                </a>
+            </div>
+
+            <!-- Menú de Navegación -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="home.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link active">Menú</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="Ofertas-Promociones.html" class="nav-link">Ofertas</a></li>
+                    <li class="nav-item"><a href="reservas.html" class="nav-link">Reservas</a></li>
+                    <li class="nav-item"><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">Nosotros</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botones de Autenticación y Menú móvil -->
+            <div class="auth-buttons">
+                <a href="iniciar-seccion.html" class="btn btn-login">Iniciar Sesión</a>
+                <a href="registrarse.html" class="btn btn-register">Registrarse</a>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Sección del Menú -->
+    <!-- Hero del Menú -->
     <section class="menu-hero">
-        <h1>Nuestro Menú</h1>
-        <p>Descubre la mejor variedad de arroces preparados con los mejores ingredientes.</p>
+        <div class="container">
+            <h1 class="menu-title animate__animated animate__fadeInDown">Nuestro Menú</h1>
+            <p class="menu-description animate__animated animate__fadeInUp animate__delay-1s">Descubre la mejor variedad de arroces preparados con los mejores ingredientes</p>
+        </div>
     </section>
 
     <!-- Filtros y Búsqueda -->
-    <section class="filtros">
-        <div class="buscar">
-            <input type="text" placeholder="Buscar por nombre...">
-        </div>
-        <div class="filtros-opciones">
-            <select>
-                <option value="">Filtrar por categoría</option>
-                <option value="arroz-chino">Arroz Chino</option>
-                <option value="arroz-paisa">Arroz Paisa</option>
-                <option value="arroz-especial">Arroz Especial</option>
-            </select>
-            <select>
-                <option value="">Ordenar por</option>
-                <option value="popularidad">Popularidad</option>
-                <option value="precio-asc">Precio: Menor a Mayor</option>
-                <option value="precio-desc">Precio: Mayor a Menor</option>
-            </select>
+    <section class="menu-filters animate__animated animate__fadeIn animate__delay-1s">
+        <div class="container">
+            <div class="filter-grid">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar platos...">
+                </div>
+                
+                <div class="filter-group">
+                    <label for="category-filter"><i class="fas fa-tags"></i> Categoría:</label>
+                    <select id="category-filter">
+                        <option value="all">Todas las categorías</option>
+                        <option value="chino">Arroz Chino</option>
+                        <option value="paisa">Arroz Paisa</option>
+                        <option value="especial">Arroz Especial</option>
+                        <option value="mixto">Arroz Mixto</option>
+                        <option value="combo">Combos</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-filter"><i class="fas fa-sort"></i> Ordenar por:</label>
+                    <select id="sort-filter">
+                        <option value="popular">Popularidad</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name-asc">Nombre: A-Z</option>
+                        <option value="name-desc">Nombre: Z-A</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Categorías de Platos -->
-    <section class="categorias">
-        <h2>Categorías de Platos</h2>
-        <div class="platos-grid">
-            <!-- Plato 1 -->
-            <div class="plato">
-                <img src="../images/arroz-chino.jpg" alt="Arroz Chino">
-                <h3>Arroz Chino</h3>
-                <p>Arroz frito con vegetales, huevo y pollo.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">Todos</button>
+                <button class="category-tab" data-category="chino">Arroz Chino</button>
+                <button class="category-tab" data-category="paisa">Arroz Paisa</button>
+                <button class="category-tab" data-category="especial">Arroz Especial</button>
+                <button class="category-tab" data-category="mixto">Arroz Mixto</button>
+                <button class="category-tab" data-category="combo">Combos</button>
             </div>
-            <!-- Plato 2 -->
-            <div class="plato">
-                <img src="../images/arroz-paisa.jpg" alt="Arroz Paisa">
-                <h3>Arroz Paisa</h3>
-                <p>Arroz con frijoles, carne, plátano y aguacate.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 3 -->
-            <div class="plato">
-                <img src="../images/arroz-especial.jpg" alt="Arroz Especial">
-                <h3>Arroz Especial</h3>
-                <p>Arroz con camarones, pollo y vegetales.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 4 -->
-            <div class="plato">
-                <img src="../images/pollo-camaron.jpg" alt="Pollo y Camarón">
-                <h3>Pollo y Camarón</h3>
-                <p>Arroz con pollo, camarones y salsa especial.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 5 -->
-            <div class="plato">
-                <img src="../images/arroz-mixto.jpg" alt="Arroz Mixto">
-                <h3>Arroz Mixto</h3>
-                <p>Arroz con carne, pollo y cerdo.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 6 -->
-            <div class="plato">
-                <img src="../images/tres-carnes.jpg" alt="Arroz de las Tres Carnes">
-                <h3>Arroz de las Tres Carnes</h3>
-                <p>Arroz con carne de res, pollo y cerdo.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 7 -->
-            <div class="plato">
-                <img src="../images/arroz-ranchero.jpg" alt="Arroz Ranchero">
-                <h3>Arroz Ranchero</h3>
-                <p>Arroz con chorizo, huevo y vegetales.</p>
-                <p class="precio">$35.000, $45.000, $55.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 8 -->
-            <div class="plato">
-                <img src="../images/combos.jpg" alt="Combos Personales">
-                <h3>Combos Personales</h3>
-                <p>Variedad de combos para una persona.</p>
-                <p class="precio">Todos a $18.000</p>
-                <button class="btn">Agregar al Carrito</button>
-            </div>
-            <!-- Plato 9 -->
-            <div class="plato">
-                <img src="../images/porciones.jpg" alt="Porciones Personales">
-                <h3>Porciones Personales</h3>
-                <p>Porciones individuales de arroz.</p>
-                <p class="precio">$6.000, $6.000 y $23.000</p>
-                <button class="btn">Agregar al Carrito</button>
+            
+            <div class="dishes-grid" id="dishes-container">
+                <!-- Los platos se cargarán dinámicamente aquí -->
             </div>
         </div>
     </section>
 
     <!-- Sección de Recomendaciones -->
-    <section class="recomendaciones">
-        <h2>Recomendaciones</h2>
-        <div class="recomendaciones-grid">
-            <div class="recomendacion">
-                <h3>Los más vendidos</h3>
-                <p>Arroz Chino, Arroz Paisa y Arroz Especial.</p>
+    <section class="recommendations animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="section-title">Recomendaciones del Chef</h2>
+            <p class="section-subtitle">Nuestros platos más populares</p>
+            
+            <div class="recommendations-slider">
+                <div class="recommendation-slide active">
+                    <div class="recommendation-card">
+                        <img src="../imagenes/arroz-especial.jpg" alt="Arroz Especial">
+                        <div class="recommendation-content">
+                            <h3>Arroz Especial</h3>
+                            <p>El favorito de nuestros clientes, con camarones, pollo y vegetales frescos.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.9 (128)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendation-slide">
+                    <div class="recommendation-card">
+                        <img src="../imagenes/arroz-chino.jpg" alt="Arroz Chino">
+                        <div class="recommendation-content">
+                            <h3>Arroz Chino</h3>
+                            <p>Nuestra versión auténtica con ingredientes frescos y sabores orientales.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.7 (95)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendation-slide">
+                    <div class="recommendation-card">
+                        <img src="../imagenes/combo-familiar.jpg" alt="Combo Familiar">
+                        <div class="recommendation-content">
+                            <h3>Combo Familiar</h3>
+                            <p>Perfecto para compartir con toda la familia a un precio especial.</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (76)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="recomendacion">
-                <h3>Novedades en el menú</h3>
-                <p>Prueba nuestro nuevo Arroz Ranchero.</p>
+            
+            <div class="slider-controls">
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Pie de Página -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="enlaces-rapidos">
-                <a href="#">Política de Devoluciones</a>
-                <a href="#">Términos y Condiciones</a>
+    <!-- Modal de Detalles del Plato -->
+    <div class="dish-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <div class="main-image">
+                        <img src="" alt="Plato" id="modal-main-image">
+                    </div>
+                    <div class="thumbnail-container" id="thumbnails-container">
+                        <!-- Miniaturas se cargarán aquí -->
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-dish-name"></h2>
+                    <div class="dish-meta">
+                        <span class="dish-category" id="modal-dish-category"></span>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span id="modal-dish-rating"></span>
+                        </div>
+                    </div>
+                    <p class="dish-description" id="modal-dish-description"></p>
+                    
+                    <div class="price-section">
+                        <h3>Precios:</h3>
+                        <div class="price-options" id="price-options">
+                            <!-- Opciones de precio se cargarán aquí -->
+                        </div>
+                    </div>
+                    
+                    <div class="customization">
+                        <h3>Personaliza tu plato:</h3>
+                        <div class="custom-options" id="custom-options">
+                            <!-- Opciones de personalización se cargarán aquí -->
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" min="1" value="1" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <button class="btn btn-primary btn-add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="modal-overlay"></div>
+
+    <!-- Carrito Flotante -->
+    <div class="cart-floating">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Botón de ir arriba -->
+    <button class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="../js/menu.js"></script>
 </body>

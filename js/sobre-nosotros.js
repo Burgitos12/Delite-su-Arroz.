@@ -1,112 +1,261 @@
-// Animación de scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
+    
+    // Ocultar preloader cuando la página esté cargada
+    window.addEventListener('load', function() {
+        preloader.classList.add('fade-out');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Mostrar u ocultar botón de volver arriba
+        const backToTop = document.querySelector('.back-to-top');
+        if (window.scrollY > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+
+    // Menú hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const navList = document.querySelector('.nav-list');
+    
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navList.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navList.classList.remove('active');
+            }
+        });
+    });
+
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Botón de volver arriba
+    const backToTop = document.querySelector('.back-to-top');
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
             behavior: 'smooth'
         });
     });
-});
 
-// Animación de aparición al hacer scroll
-const elementos = document.querySelectorAll('.nuestra-historia, .mision-vision, .compromiso, .equipo, .testimonios, .cta');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.5 });
-
-elementos.forEach(el => observer.observe(el));
-
-// Efecto de movimiento en el fondo del footer y cta
-const cta = document.querySelector('.cta');
-const footer = document.querySelector('.footer');
-
-const moveBackground = (element) => {
-    let posX = 0;
-    let posY = 0;
-    const speed = 0.5;
-
-    const animate = () => {
-        posX += speed;
-        posY += speed;
-        element.style.backgroundPosition = `${posX}px ${posY}px`;
-        requestAnimationFrame(animate);
+    // Contador numérico animado
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const animateCounters = () => {
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const duration = 2000; // 2 segundos
+            const step = target / (duration / 16); // 60fps
+            
+            let current = 0;
+            const counter = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    clearInterval(counter);
+                    current = target;
+                }
+                stat.textContent = Math.floor(current);
+            }, 16);
+            
+            // Animación de aparición
+            stat.style.animation = 'countUp 1s ease both';
+        });
     };
+    
+    // Activar contadores cuando la sección es visible
+    const statsSection = document.querySelector('.historia-stats');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    if (statsSection) {
+        observer.observe(statsSection);
+    }
 
-    animate();
-};
+    // Slider del equipo
+    const equipoSlider = document.querySelector('.equipo-slider');
+    const sliderPrev = document.querySelector('.slider-prev');
+    const sliderNext = document.querySelector('.slider-next');
+    
+    if (equipoSlider && sliderPrev && sliderNext) {
+        let currentScroll = 0;
+        const cardWidth = 350 + parseInt(getComputedStyle(equipoSlider).gap);
+        
+        sliderNext.addEventListener('click', () => {
+            currentScroll += cardWidth;
+            if (currentScroll > equipoSlider.scrollWidth - equipoSlider.clientWidth) {
+                currentScroll = equipoSlider.scrollWidth - equipoSlider.clientWidth;
+            }
+            equipoSlider.scrollTo({
+                left: currentScroll,
+                behavior: 'smooth'
+            });
+        });
+        
+        sliderPrev.addEventListener('click', () => {
+            currentScroll -= cardWidth;
+            if (currentScroll < 0) {
+                currentScroll = 0;
+            }
+            equipoSlider.scrollTo({
+                left: currentScroll,
+                behavior: 'smooth'
+            });
+        });
+    }
 
-moveBackground(cta);
-moveBackground(footer);
+    // Efecto de partículas en el fondo
+    createParticles();
 
-// particles.js config
-particlesJS("particles-js", {
-    particles: {
-        number: {
-            value: 80,
-            density: {
-                enable: true,
-                value_area: 800,
-            },
-        },
-        color: {
-            value: "#ff0000", // Color rojo
-        },
-        shape: {
-            type: "circle",
-        },
-        opacity: {
-            value: 0.5,
-            random: true,
-        },
-        size: {
-            value: 3,
-            random: true,
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#ff0000",
-            opacity: 0.4,
-            width: 1,
-        },
-        move: {
-            enable: true,
-            speed: 3,
-            direction: "none",
-            random: true,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-        },
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: {
-            onhover: {
-                enable: true,
-                mode: "repulse",
-            },
-            onclick: {
-                enable: true,
-                mode: "push",
-            },
-            resize: true,
-        },
-        modes: {
-            repulse: {
-                distance: 100,
-                duration: 0.4,
-            },
-            push: {
-                particles_nb: 4,
-            },
-        },
-    },
-    retina_detect: true,
+    // Animación de ingredientes flotantes
+    animateFloatingIngredients();
 });
 
+function createParticles() {
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1';
+    canvas.style.pointerEvents = 'none';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    const particleCount = window.innerWidth < 768 ? 50 : 100;
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 2 - 1;
+            this.speedY = Math.random() * 2 - 1;
+            this.color = `rgba(230, 57, 70, ${Math.random() * 0.5 + 0.1})`;
+            this.opacity = Math.random() * 0.5 + 0.1;
+            this.life = Math.random() * 100 + 50;
+            this.currentLife = 0;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.currentLife++;
+
+            // Rebotar en los bordes
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+            // Cambiar opacidad basado en el ciclo de vida
+            if (this.currentLife < this.life / 2) {
+                this.opacity = (this.currentLife / (this.life / 2)) * 0.5;
+            } else {
+                this.opacity = ((this.life - this.currentLife) / (this.life / 2)) * 0.5;
+            }
+        }
+
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.opacity;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 1;
+        }
+    }
+
+    function initParticles() {
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        particles.forEach((particle, index) => {
+            particle.update();
+            particle.draw();
+
+            if (particle.currentLife >= particle.life) {
+                particles.splice(index, 1);
+                particles.push(new Particle());
+            }
+        });
+        
+        requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+}
+
+function animateFloatingIngredients() {
+    const ingredients = document.querySelectorAll('.floating-item');
+    
+    ingredients.forEach(ingredient => {
+        // Añadir animación aleatoria adicional
+        ingredient.style.setProperty('--start-x', `${Math.random() * 20 - 10}%`);
+        ingredient.style.setProperty('--end-x', `${Math.random() * 20 - 10}%`);
+        
+        // Añadir animación de balanceo
+        ingredient.style.animation = `
+            floatItem var(--duration) infinite ease-in-out var(--delay),
+            swing ${Math.random() * 10 + 10}s infinite ease-in-out var(--delay)
+        `;
+    });
+}

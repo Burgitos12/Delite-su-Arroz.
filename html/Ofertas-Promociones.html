@@ -3,153 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas y Promociones - Deleite su Arroz</title>
-    <link rel="stylesheet" href="../css/Ofertas-Promociones.css">
+    <title>Ofertas Especiales - Deleite su Arroz</title>
+    <link rel="stylesheet" href="../css/ofertas-promociones.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
+
     <!-- Encabezado -->
     <header class="header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+            <h1 class="logo-text">Deleite su Arroz</h1>
         </div>
         <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <ul class="nav-list">
+                <li><a href="home.html" class="nav-link">Inicio</a></li>
+                <li><a href="menu.html" class="nav-link">Menú</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="ofertas-promociones.html" class="nav-link active">Ofertas</a></li>
+                <li><a href="reservas.html" class="nav-link">Reservas</a></li>
+                <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Nosotros</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
         <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
+            <a href="iniciar-seccion.html" class="btn btn-login">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn btn-register">Registrarse</a>
         </div>
     </header>
 
-    <main>
-        <!-- Oferta del Día -->
-        <section class="oferta" id="oferta-del-dia">
-            <img src="../images/oferta-dia.jpg" alt="Oferta del Día">
-            <h2>🔥 Oferta del Día</h2>
-            <p>Cada día, un plato diferente a precio especial.</p>
-            <button class="btn-detalles" data-modal="modal-oferta-dia">Ver Detalles</button>
+    <!-- Hero Section -->
+    <section class="ofertas-hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Ofertas Especiales</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">Disfruta de nuestros platos con increíbles descuentos y promociones</p>
+            <div class="countdown-container animate__animated animate__fadeIn">
+                <p>¡Oferta del día termina en!</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span>Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span>Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span>Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="ofertas-container">
+        <!-- Daily Offers Section -->
+        <section class="daily-offers">
+            <div class="section-header">
+                <h2 class="section-title">Ofertas del Día</h2>
+                <div class="section-subtitle">¡Descuentos especiales que cambian cada día!</div>
+            </div>
+
+            <div class="offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card" data-category="daily">
+                    <div class="offer-badge">🔥 Hoy</div>
+                    <div class="offer-image">
+                        <img src="../images/oferta-dia.jpg" alt="Oferta del Día">
+                        <div class="offer-overlay">
+                            <button class="offer-btn" data-offer="daily-offer">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Arroz Chino Especial</h3>
+                        <div class="offer-price">
+                            <span class="original-price">$25.000</span>
+                            <span class="discounted-price">$22.500</span>
+                        </div>
+                        <div class="offer-meta">
+                            <span class="offer-discount">10% OFF</span>
+                            <span class="offer-time"><i class="far fa-clock"></i> Solo hoy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="offer-card" data-category="daily">
+                    <div class="offer-badge">🍜 Combo</div>
+                    <div class="offer-image">
+                        <img src="../images/oferta-combo.jpg" alt="Oferta Combo">
+                        <div class="offer-overlay">
+                            <button class="offer-btn" data-offer="combo-offer">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Combo Familiar</h3>
+                        <div class="offer-price">
+                            <span class="original-price">$75.000</span>
+                            <span class="discounted-price">$65.000</span>
+                        </div>
+                        <div class="offer-meta">
+                            <span class="offer-discount">13% OFF</span>
+                            <span class="offer-time"><i class="far fa-clock"></i> Solo hoy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="offer-card" data-category="daily">
+                    <div class="offer-badge">🥢 Nuevo</div>
+                    <div class="offer-image">
+                        <img src="../images/oferta-nuevo.jpg" alt="Nuevo Plato">
+                        <div class="offer-overlay">
+                            <button class="offer-btn" data-offer="new-offer">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="offer-content">
+                        <h3 class="offer-title">Arroz Thai Picante</h3>
+                        <div class="offer-price">
+                            <span class="original-price">$28.000</span>
+                            <span class="discounted-price">$23.800</span>
+                        </div>
+                        <div class="offer-meta">
+                            <span class="offer-discount">15% OFF</span>
+                            <span class="offer-time"><i class="far fa-clock"></i> Solo hoy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Oferta de Cumpleaños -->
-        <section class="oferta" id="oferta-cumpleanos">
-            <img src="../images/oferta-cumpleanos.jpg" alt="Oferta de Cumpleaños">
-            <h2>🎂 Oferta de Cumpleaños</h2>
-            <p>¡Festeja tu día especial con nosotros!</p>
-            <button class="btn-detalles" data-modal="modal-cumpleanos">Ver Detalles</button>
+        <!-- Special Promotions Section -->
+        <section class="special-promotions">
+            <div class="section-header">
+                <h2 class="section-title">Promociones Especiales</h2>
+                <div class="section-subtitle">Ofertas exclusivas para diferentes ocasiones</div>
+            </div>
+
+            <div class="promotions-tabs">
+                <button class="tab-btn active" data-tab="birthday">🎂 Cumpleaños</button>
+                <button class="tab-btn" data-tab="family">👨‍👩‍👧‍👦 Familiar</button>
+                <button class="tab-btn" data-tab="frequent">🛍️ Clientes Frecuentes</button>
+                <button class="tab-btn" data-tab="contests">🎁 Concursos</button>
+            </div>
+
+            <div class="promotions-content">
+                <!-- Birthday Promotion -->
+                <div class="promotion-tab active" id="birthday-tab">
+                    <div class="promotion-card">
+                        <div class="promotion-image">
+                            <img src="../images/oferta-cumpleanos.jpg" alt="Oferta Cumpleaños">
+                        </div>
+                        <div class="promotion-details">
+                            <h3>Celebra tu cumpleaños con nosotros</h3>
+                            <ul class="promotion-benefits">
+                                <li><i class="fas fa-gift"></i> 20% de descuento en tu plato principal</li>
+                                <li><i class="fas fa-users"></i> Si vienes con 4+ amigos, tú comes gratis</li>
+                                <li><i class="fas fa-cake"></i> Postre especial de cortesía</li>
+                                <li><i class="fas fa-wine-glass-alt"></i> Bebida gratis para el cumpleañero</li>
+                            </ul>
+                            <div class="promotion-actions">
+                                <button class="btn-primary" id="reservar-cumpleanos">Reservar Mesa</button>
+                                <button class="btn-outline" id="ver-condiciones">Ver Condiciones</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Promotion -->
+                <div class="promotion-tab" id="family-tab">
+                    <div class="promotion-card">
+                        <div class="promotion-image">
+                            <img src="../images/oferta-familiar.jpg" alt="Oferta Familiar">
+                        </div>
+                        <div class="promotion-details">
+                            <h3>Oferta Especial Familiar</h3>
+                            <ul class="promotion-benefits">
+                                <li><i class="fas fa-percentage"></i> 15% de descuento en pedidos familiares (4+ platos)</li>
+                                <li><i class="fas fa-glass-whiskey"></i> Bebidas ilimitadas para niños</li>
+                                <li><i class="fas fa-utensils"></i> Plato extra de cortesía para compartir</li>
+                                <li><i class="fas fa-parking"></i> Estacionamiento gratuito</li>
+                            </ul>
+                            <div class="promotion-actions">
+                                <button class="btn-primary" id="reservar-familiar">Reservar Mesa Familiar</button>
+                                <button class="btn-outline" id="menu-familiar">Ver Menú Familiar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frequent Customers -->
+                <div class="promotion-tab" id="frequent-tab">
+                    <div class="promotion-card">
+                        <div class="promotion-image">
+                            <img src="../images/promo-clientes.jpg" alt="Clientes Frecuentes">
+                        </div>
+                        <div class="promotion-details">
+                            <h3>Programa de Fidelización</h3>
+                            <ul class="promotion-benefits">
+                                <li><i class="fas fa-star"></i> Acumula puntos con cada compra</li>
+                                <li><i class="fas fa-tag"></i> Cada 5 pedidos, el 6to es gratis</li>
+                                <li><i class="fas fa-birthday-cake"></i> Ofertas exclusivas en tu cumpleaños</li>
+                                <li><i class="fas fa-envelope"></i> Acceso anticipado a nuevas promociones</li>
+                            </ul>
+                            <div class="promotion-actions">
+                                <button class="btn-primary" id="unirse-programa">Unirse al Programa</button>
+                                <button class="btn-outline" id="ver-puntos">Ver Mis Puntos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contests -->
+                <div class="promotion-tab" id="contests-tab">
+                    <div class="promotion-card">
+                        <div class="promotion-image">
+                            <img src="../images/sorteos.jpg" alt="Sorteos y Concursos">
+                        </div>
+                        <div class="promotion-details">
+                            <h3>Participa y Gana</h3>
+                            <ul class="promotion-benefits">
+                                <li><i class="fas fa-trophy"></i> Cena gratis para 2 personas cada mes</li>
+                                <li><i class="fas fa-camera"></i> Concurso de fotos con premios semanales</li>
+                                <li><i class="fas fa-receipt"></i> Gana descuentos compartiendo tu factura</li>
+                                <li><i class="fas fa-users"></i> Invita amigos y gana recompensas</li>
+                            </ul>
+                            <div class="promotion-actions">
+                                <button class="btn-primary" id="participar-sorteo">Participar Ahora</button>
+                                <button class="btn-outline" id="ver-ganadores">Ver Ganadores</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Oferta Familiar -->
-        <section class="oferta" id="oferta-familiar">
-            <img src="../images/oferta-familiar.jpg" alt="Oferta Familiar">
-            <h2>👨‍👩‍👧‍👦 Oferta Familiar</h2>
-            <p>Disfruta de un menú especial para compartir en familia.</p>
-            <button class="btn-detalles" data-modal="modal-familiar">Ver Detalles</button>
+        <!-- Limited Time Offers -->
+        <section class="limited-offers">
+            <div class="section-header">
+                <h2 class="section-title">Ofertas por Tiempo Limitado</h2>
+                <div class="section-subtitle">¡No dejes que se te escapen estas increíbles ofertas!</div>
+            </div>
+
+            <div class="limited-grid">
+                <!-- Limited Offer 1 -->
+                <div class="limited-card">
+                    <div class="limited-timer">
+                        <div class="timer-progress"></div>
+                        <span class="timer-text">Termina en: <span class="timer-count">02:15:30</span></span>
+                    </div>
+                    <div class="limited-image">
+                        <img src="../images/oferta-reloj-1.jpg" alt="Oferta Reloj 1">
+                    </div>
+                    <div class="limited-content">
+                        <h3>Happy Hour de Arroces</h3>
+                        <p>De 2pm a 5pm, todos nuestros arroces con 20% de descuento</p>
+                        <div class="limited-price">
+                            <span class="discount-badge">-20%</span>
+                            <span class="valid-time"><i class="far fa-clock"></i> Hoy hasta las 5pm</span>
+                        </div>
+                        <button class="limited-btn">Aprovechar Oferta</button>
+                    </div>
+                </div>
+
+                <!-- Limited Offer 2 -->
+                <div class="limited-card">
+                    <div class="limited-timer">
+                        <div class="timer-progress"></div>
+                        <span class="timer-text">Termina en: <span class="timer-count">01:45:15</span></span>
+                    </div>
+                    <div class="limited-image">
+                        <img src="../images/oferta-reloj-2.jpg" alt="Oferta Reloj 2">
+                    </div>
+                    <div class="limited-content">
+                        <h3>2x1 en Postres</h3>
+                        <p>Compra un postre y lleva otro igual totalmente gratis</p>
+                        <div class="limited-price">
+                            <span class="discount-badge">2x1</span>
+                            <span class="valid-time"><i class="far fa-clock"></i> Solo hasta mañana</span>
+                        </div>
+                        <button class="limited-btn">Pedir Ahora</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Promoción de Clientes Frecuentes -->
-        <section class="oferta" id="promo-clientes">
-            <img src="../images/promo-clientes.jpg" alt="Promoción de Clientes Frecuentes">
-            <h2>🛍️ Promoción de Clientes Frecuentes</h2>
-            <p>¡Cada 5 pedidos, el 6.º es gratis!</p>
-            <button class="btn-detalles" data-modal="modal-clientes">Ver Detalles</button>
-        </section>
-
-        <!-- Sorteos y Concursos -->
-        <section class="oferta" id="sorteos">
-            <img src="../images/sorteos.jpg" alt="Sorteos y Concursos">
-            <h2>🎁 Sorteos y Concursos</h2>
-            <p>Participa y gana una cena gratis.</p>
-            <button class="btn-detalles" data-modal="modal-sorteos">Ver Detalles</button>
+        <!-- Coupon Section -->
+        <section class="coupon-section">
+            <div class="coupon-container">
+                <div class="coupon-card">
+                    <div class="coupon-header">
+                        <h3>¡Descuento Exclusivo!</h3>
+                        <div class="coupon-value">20% OFF</div>
+                    </div>
+                    <div class="coupon-body">
+                        <p>Usa este cupón en tu próxima visita y obtén un 20% de descuento en tu pedido</p>
+                        <div class="coupon-code">DEL20ARROZ</div>
+                        <p class="coupon-terms">Válido para pedidos mayores a $50.000. No acumulable con otras promociones.</p>
+                    </div>
+                    <div class="coupon-footer">
+                        <button class="btn-coupon" id="copiar-cupon">Copiar Código</button>
+                        <button class="btn-coupon" id="compartir-cupon">Compartir</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Modales -->
-    <div class="modal" id="modal-oferta-dia">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>🔥 Oferta del Día</h2>
-            <p>Hoy: <span id="plato-oferta">Arroz chino</span> con <span id="descuento-oferta">10% de descuento</span>.</p>
-            <img src="../images/oferta-dia.jpg" alt="Oferta del Día">
-        </div>
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab-btn fab-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <button class="fab-btn fab-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </div>
 
-    <div class="modal" id="modal-cumpleanos">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>🎂 Oferta de Cumpleaños</h2>
-            <ul>
-                <li>20% de descuento en cualquier plato.</li>
-                <li>Si vienes con más de 4 amigos, el cumpleañero come gratis.</li>
-            </ul>
-            <img src="../images/oferta-cumpleanos.jpg" alt="Oferta de Cumpleaños">
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="ofertas-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo-white.png" alt="Deleite su Arroz" class="footer-logo">
+                <p class="footer-slogan">La mejor experiencia en arroces desde 2010</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573223724043" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
 
-    <div class="modal" id="modal-familiar">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>👨‍👩‍👧‍👦 Oferta Familiar</h2>
-            <ul>
-                <li>15% de descuento en pedidos familiares (mínimo 4 platos).</li>
-                <li>Combo especial con bebida incluida.</li>
-            </ul>
-            <img src="../images/oferta-familiar.jpg" alt="Oferta Familiar">
-        </div>
-    </div>
+            <div class="footer-links">
+                <h4 class="links-title">Enlaces rápidos</h4>
+                <ul class="links-list">
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="ofertas-promociones.html">Ofertas</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                </ul>
+            </div>
 
-    <div class="modal" id="modal-clientes">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>🛍️ Promoción de Clientes Frecuentes</h2>
-            <p>¡Cada 5 pedidos, el 6.º es gratis!</p>
-            <p>Inscríbete en nuestro programa de fidelización y acumula puntos.</p>
-            <img src="../images/promo-clientes.jpg" alt="Promoción de Clientes Frecuentes">
-        </div>
-    </div>
+            <div class="footer-contact">
+                <h4 class="contact-title">Contacto</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67, Bogotá</p>
+                    <p><i class="fas fa-phone-alt"></i> +57 322 3724043</p>
+                    <p><i class="fas fa-envelope"></i> info@deleitesuarroz.com</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 11am - 9pm<br>Sab-Dom: 12pm - 10pm</p>
+                </div>
+            </div>
 
-    <div class="modal" id="modal-sorteos">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>🎁 Sorteos y Concursos</h2>
-            <p>Participa y gana una cena gratis.</p>
-            <p>Sigue nuestras redes sociales y comparte tu experiencia.</p>
-            <img src="../images/sorteos.jpg" alt="Sorteos y Concursos">
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Recibe nuestras ofertas</h4>
+                <p class="newsletter-text">Suscríbete para recibir promociones exclusivas directamente en tu email.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" class="newsletter-input">
+                    <button type="submit" class="newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <!-- Modal para la ubicación del local -->
-    <div class="modal" id="modal-ubicacion">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>📍 Visítanos en nuestro local</h2>
-            <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.893413692088!2d-75.62538198873364!3d2.1940352977772983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e24d99573bd5d45%3A0xf86a6a9e93f5befd!2zRGVsZWl0ZSBTdSBBcnJveiDwn6WYIEdhcnrDs24!5e0!3m2!1ses!2sco!4v1741892784342!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                width="100%"
-                height="300"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2023 Deleite su Arroz. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="politica-privacidad.html">Política de privacidad</a>
+                <a href="terminos-condiciones.html">Términos y condiciones</a>
+            </div>
         </div>
-    </div>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>
-            <a href="#" id="btn-ubicacion">📍 Visítanos en nuestro local</a> | 
-            <a href="https://wa.me/573223724043" target="_blank">📞 Haz tu pedido por WhatsApp</a> | 
-        </p>
     </footer>
 
-    <script src="../js/Ofertas-Promociones.js"></script>
+    <!-- Modals -->
+    <div class="modal" id="offer-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="../js/ofertas-promociones.js"></script>
 </body>
 </html>

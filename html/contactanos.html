@@ -4,120 +4,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos - Deleite su Arroz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/contactanos.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
+
     <!-- Encabezado -->
     <header class="header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+            <h1 class="logo-text">Deleite su Arroz</h1>
         </div>
         <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="home.html">Inicio</a></li>
+                <li class="nav-item"><a href="menu.html">Menú</a></li>
+                <li class="nav-item"><a href="blog.html">Blog</a></li>
+                <li class="nav-item"><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                <li class="nav-item"><a href="reservas.html">Reservas</a></li>
+                <li class="nav-item active"><a href="contactanos.html">Contacto</a></li>
+                <li class="nav-item"><a href="sobre-nosotros.html">Sobre nosotros</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
         <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
+            <a href="iniciar-seccion.html" class="btn login-btn">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn register-btn">Registrarse</a>
         </div>
     </header>
 
-    <!-- Sección de Contacto -->
+    <!-- Sección Hero Contacto -->
     <section class="contacto-hero">
-        <h1>Contáctanos</h1>
-        <p>¿Tienes dudas o quieres hacer un pedido? Escríbenos y te responderemos lo antes posible.</p>
+        <div class="hero-content">
+            <h1 class="hero-title">Contáctanos</h1>
+            <p class="hero-subtitle">¿Tienes dudas o quieres hacer un pedido? Escríbenos y te responderemos lo antes posible.</p>
+            <div class="scroll-down">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                </div>
+            </div>
+        </div>
+        <div class="floating-ingredients">
+            <img src="../images/ingredient1.png" alt="Ingrediente" class="floating-item" style="--delay: 0s; --duration: 15s; --start-y: -10%;">
+            <img src="../images/ingredient2.png" alt="Ingrediente" class="floating-item" style="--delay: 2s; --duration: 18s; --start-y: -15%;">
+            <img src="../images/ingredient3.png" alt="Ingrediente" class="floating-item" style="--delay: 4s; --duration: 20s; --start-y: -20%;">
+        </div>
     </section>
 
     <!-- Formulario de Contacto -->
     <section class="contacto-form">
-        <h2>Formulario de Contacto</h2>
-        <form id="contactoForm">
-            <div class="form-group">
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="contacto">Número de contacto:</label>
-                <input type="tel" id="contacto" name="contacto" required>
-            </div>
-            <div class="form-group">
-                <label for="asunto">Asunto:</label>
-                <select id="asunto" name="asunto" required>
-                    <option value="consulta">Consulta</option>
-                    <option value="pedido">Pedido</option>
-                    <option value="sugerencia">Sugerencia</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
+        <div class="form-container">
+            <h2 class="form-title">Formulario de Contacto</h2>
+            <form id="contactoForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group floating-label">
+                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="nombre">Nombre completo</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group floating-label">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Correo electrónico</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+                <div class="form-group floating-label">
+                    <input type="tel" id="contacto" name="contacto" required>
+                    <label for="contacto">Número de contacto</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="form-group select-group">
+                    <label for="asunto">Asunto</label>
+                    <div class="custom-select">
+                        <select id="asunto" name="asunto" required>
+                            <option value="" disabled selected>Seleccione un asunto</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="pedido">Pedido</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <span class="custom-arrow"></span>
+                    </div>
+                </div>
+                <div class="form-group floating-label">
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    <label for="mensaje">Mensaje</label>
+                    <span class="focus-border"></span>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Enviar Mensaje</span>
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </button>
+            </form>
+        </div>
+        <div class="form-decoration">
+            <div class="decoration-item"></div>
+            <div class="decoration-item"></div>
+            <div class="decoration-item"></div>
+        </div>
     </section>
+
+    <!-- Confirmación de Envío -->
+    <div class="contacto-confirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="confirmation-title">¡Mensaje Enviado!</h3>
+            <p class="confirmation-message">Gracias por contactarnos. Te responderemos lo antes posible.</p>
+            <button class="confirmation-btn">Aceptar</button>
+        </div>
+    </div>
 
     <!-- Información de Contacto -->
     <section class="info-contacto">
-        <h2>Información de Contacto</h2>
-        <div class="contacto-details">
-            <p><strong>Teléfono y WhatsApp:</strong> +123 456 789</p>
-            <p><strong>Correo electrónico:</strong> info@deleitesuarroz.com</p>
-            <p><strong>Dirección:</strong> Calle Falsa 123, Ciudad, País</p>
-        </div>
-        <div class="redes-sociales">
-            <h3>Síguenos en:</h3>
-            <a href="#" class="social-icon"><img src="../images/facebook.png" alt="Facebook"></a>
-            <a href="#" class="social-icon"><img src="../images/instagram.png" alt="Instagram"></a>
-            <a href="#" class="social-icon"><img src="../images/whatsapp.png" alt="WhatsApp"></a>
+        <div class="info-container">
+            <h2 class="info-title">Información de Contacto</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Teléfono y WhatsApp</h4>
+                    <p>+123 456 789</p>
+                    <a href="tel:+123456789" class="info-link">Llamar ahora</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Correo electrónico</h4>
+                    <p>info@deleitesuarroz.com</p>
+                    <a href="mailto:info@deleitesuarroz.com" class="info-link">Enviar email</a>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Dirección</h4>
+                    <p>Calle Falsa 123, Ciudad, País</p>
+                    <a href="#mapa" class="info-link">Ver en mapa</a>
+                </div>
+            </div>
+            
+            <div class="social-section">
+                <h3>Síguenos en redes sociales</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Mapa de Ubicación -->
-    <section class="mapa">
-        <h2>Ubicación</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-0.123456!3d51.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzI0LjQiTiAwwrAwNyczNi4wIlc!5e0!3m2!1sen!2sus!4v1234567890123"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
+    <section class="mapa" id="mapa">
+        <h2 class="mapa-title">Ubicación</h2>
+        <div class="mapa-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789!2d-0.123456!3d51.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA3JzI0LjQiTiAwwrAwNyczNi4wIlc!5e0!3m2!1sen!2sus!4v1234567890123"
+                width="100%"
+                height="500"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                aria-label="Mapa de ubicación de Deleite su Arroz">
+            </iframe>
+            <div class="mapa-overlay">
+                <div class="mapa-info">
+                    <h4>Horario de atención</h4>
+                    <p>Lunes a Viernes: 10:00 AM - 10:00 PM</p>
+                    <p>Sábado y Domingo: 11:00 AM - 11:00 PM</p>
+                    <a href="reservas.html" class="btn-reservar">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Pie de Página -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="enlaces-rapidos">
-                <h3>Enlaces Rápidos</h3>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../images/logo-white.png" alt="Logo Deleite su Arroz">
+                <h3>Deleite su Arroz</h3>
+                <p>El mejor arroz de la ciudad, hecho con amor y tradición.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces</h4>
                 <ul>
+                    <li><a href="home.html">Inicio</a></li>
                     <li><a href="menu.html">Menú</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
                 </ul>
             </div>
-            <div class="politicas">
-                <h3>Políticas</h3>
-                <ul>
-                    <li><a href="#">Políticas de Privacidad</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                </ul>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</p>
+                <p><i class="fas fa-phone-alt"></i> +123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@deleitesuarroz.com</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Redes Sociales</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Deleite su Arroz. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
             </div>
         </div>
     </footer>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/123456789" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón de volver arriba -->
+    <button class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="../js/contactanos.js"></script>
 </body>
 </html>

@@ -12,16 +12,20 @@
 │   │── menu.css             # Estilos para menu.html    
 │  
 │── 📂 html/  
-│   │── index.html                # Página de inicio  
-│   │── blog.html                 # Página del Blog  
-│   │── reservas.html             # Página de Reservas  
+│   │── blog.html                # Página del Blog
+│   │──carrito-de-compras.html   # Página del carrito de compras
+│   │── contactanos
+│   │── historial.html
 │   │── contactanos.html          # Página de Contacto  
-│   │── sobre-nosotros.html       # Página Sobre Nosotros  
-│   │── iniciar-seccion.html      # Página de Inicio de Sesión  
-│   │── registrarse.html          # Página de Registro  
-│   │── olvide-mi-contrasena.html # Página para recuperar contraseña  
-│   │── carrito-de-compras.html   # Página del carrito de compras  
-│   │── menu.html                 # Página del menu
+│   │── home.html                # Página de inicio
+│   │── iniciar-seccion.html      # Página de Inicio de Sesión 
+│   │── menu.html                 # Página del menu 
+│   │── ofertas-promocinentes.html 
+│   │── recuperar-contraseña.html
+│   │── registrarse.html          # Página de Registro
+│   │── reservas.html             # Página de Reservas
+│   │── sobre-nosotros.html       # Página Sobre Nosotros
+│   │── usuario.html
 │── 📂 js/  
 │   │── home.js                # Página de inicio  
 │   │── blog.js                 # Página del Blog  

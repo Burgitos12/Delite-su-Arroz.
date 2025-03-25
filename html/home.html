@@ -3,156 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deleite su Arroz</title>
+    <title>Deleite su Arroz - Los mejores arroces de la ciudad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573223724043" class="whatsapp-float animate__animated animate__bounceInUp animate__delay-2s">
+        <i class="fab fa-whatsapp"></i>
+        <span>Ordenar ahora</span>
+    </a>
+
     <!-- Encabezado -->
     <header class="header">
-        <!-- Logo y Título -->
-        <div class="logo">
-            <img src="../imagenes/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
-        </div>
+        <div class="container">
+            <!-- Logo y Título -->
+            <div class="logo">
+                <a href="home.html">
+                    <img src="../imagenes/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+                    <h1 class="logo-text">Deleite su Arroz</h1>
+                </a>
+            </div>
 
-        <!-- Menú de Navegación -->
-        <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </nav>
+            <!-- Menú de Navegación -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="home.html" class="nav-link active">Inicio</a></li>
+                    <li class="nav-item"><a href="menu.html" class="nav-link">Menú</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="Ofertas-Promociones.html" class="nav-link">Ofertas</a></li>
+                    <li class="nav-item"><a href="reservas.html" class="nav-link">Reservas</a></li>
+                    <li class="nav-item"><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">Nosotros</a></li>
+                </ul>
+            </nav>
 
-        <!-- Botones de Autenticación y WhatsApp -->
-        <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
-            <a href="https://wa.me/573223724043" class="btn btn-whatsapp">📲 Hacer Pedido</a>
+            <!-- Botones de Autenticación y Menú móvil -->
+            <div class="auth-buttons">
+                <a href="iniciar-seccion.html" class="btn btn-login">Iniciar Sesión</a>
+                <a href="registrarse.html" class="btn btn-register">Registrarse</a>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Banner Principal -->
     <section class="hero">
-        <div class="hero-content">
-            <h2>¡Prueba el mejor arroz de la ciudad!</h2>
-            <p>Delicioso, fresco y preparado con amor.</p>
-            <a href="menu.html" class="btn">Ver Menú</a>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('../imagenes/hero1.jpg')">
+                <div class="slide-content">
+                    <h2 class="animate__animated animate__fadeInDown">¡Prueba el mejor arroz de la ciudad!</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Delicioso, fresco y preparado con amor.</p>
+                    <a href="menu.html" class="btn btn-hero animate__animated animate__fadeInUp animate__delay-2s">Ver Menú</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('../imagenes/hero2.jpg')">
+                <div class="slide-content">
+                    <h2>Nuevas recetas cada semana</h2>
+                    <p>Descubre nuestras especialidades culinarias.</p>
+                    <a href="menu.html" class="btn btn-hero">Explorar</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('../imagenes/hero3.jpg')">
+                <div class="slide-content">
+                    <h2>Promociones exclusivas</h2>
+                    <p>Aprovecha nuestros descuentos especiales.</p>
+                    <a href="Ofertas-Promociones.html" class="btn btn-hero">Ver Ofertas</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slider-dots"></div>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
     <!-- Sección de Destacados -->
     <section class="featured-products">
-        <h2>Nuestros Platos Destacados</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="../imagenes/logo.png" alt="Arroz con Pollo">
-                <h3>Arroz con Pollo</h3>
-                <p>Delicioso arroz con pollo, especias y verduras.</p>
-                <p class="price">$10.00</p>
-                <a href="#" class="btn">Pedir Ahora</a>
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Nuestros Platos Destacados</h2>
+            <p class="section-subtitle animate__animated animate__fadeIn animate__delay-1s">Los favoritos de nuestros clientes</p>
+            
+            <div class="product-grid">
+                <div class="product animate__animated animate__fadeInUp">
+                    <div class="product-img-container">
+                        <img src="../imagenes/arroz-pollo.jpg" alt="Arroz con Pollo" class="product-img">
+                        <div class="product-overlay">
+                            <a href="menu.html#arroz-pollo" class="btn btn-view">Ver detalles</a>
+                        </div>
+                    </div>
+                    <h3>Arroz con Pollo</h3>
+                    <p>Delicioso arroz con pollo, especias y verduras.</p>
+                    <div class="product-footer">
+                        <p class="price">$10.00</p>
+                        <button class="btn btn-add-to-cart" data-product="Arroz con Pollo" data-price="10.00">Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <div class="product animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="product-img-container">
+                        <img src="../imagenes/arroz-marinero.jpg" alt="Arroz Marinero" class="product-img">
+                        <div class="product-overlay">
+                            <a href="menu.html#arroz-marinero" class="btn btn-view">Ver detalles</a>
+                        </div>
+                    </div>
+                    <h3>Arroz Marinero</h3>
+                    <p>Arroz con mariscos frescos y sabores del mar.</p>
+                    <div class="product-footer">
+                        <p class="price">$12.00</p>
+                        <button class="btn btn-add-to-cart" data-product="Arroz Marinero" data-price="12.00">Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <div class="product animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="product-img-container">
+                        <img src="../imagenes/arroz-vegetariano.jpg" alt="Arroz Vegetariano" class="product-img">
+                        <div class="product-overlay">
+                            <a href="menu.html#arroz-vegetariano" class="btn btn-view">Ver detalles</a>
+                        </div>
+                    </div>
+                    <h3>Arroz Vegetariano</h3>
+                    <p>Arroz con verduras frescas y especias.</p>
+                    <div class="product-footer">
+                        <p class="price">$8.00</p>
+                        <button class="btn btn-add-to-cart" data-product="Arroz Vegetariano" data-price="8.00">Añadir al carrito</button>
+                    </div>
+                </div>
             </div>
-            <div class="product">
-                <img src="../imagenes/logo.png" alt="Arroz Marinero">
-                <h3>Arroz Marinero</h3>
-                <p>Arroz con mariscos frescos y sabores del mar.</p>
-                <p class="price">$12.00</p>
-                <a href="#" class="btn">Pedir Ahora</a>
-            </div>
-            <div class="product">
-                <img src="../imagenes/logo.png" alt="Arroz Vegetariano">
-                <h3>Arroz Vegetariano</h3>
-                <p>Arroz con verduras frescas y especias.</p>
-                <p class="price">$8.00</p>
-                <a href="#" class="btn">Pedir Ahora</a>
+            
+            <div class="text-center animate__animated animate__fadeIn animate__delay-3s">
+                <a href="menu.html" class="btn btn-secondary">Ver Menú Completo</a>
             </div>
         </div>
-        <a href="menu.html" class="btn btn-secondary">Ver Menú Completo</a>
     </section>
 
     <!-- Sección de Ofertas y Promociones -->
     <section class="promotions">
-        <h2>Ofertas Especiales</h2>
-        <div class="promo-banners">
-            <div class="banner">
-                <p>🔥 Hoy 10% de descuento en Arroz Ranchero</p>
-                <a href="Ofertas-Promociones.html" class="btn">Ver Ofertas</a>
+        <div class="container">
+            <h2 class="section-title">Ofertas Especiales</h2>
+            <p class="section-subtitle">Aprovecha estas promociones por tiempo limitado</p>
+            
+            <div class="promo-grid">
+                <div class="promo-card promo-large animate__animated animate__zoomIn">
+                    <div class="promo-content">
+                        <span class="promo-badge">¡Nuevo!</span>
+                        <h3>Combo Familiar</h3>
+                        <p>2 arroces grandes + 2 bebidas + postre</p>
+                        <p class="promo-price">$25.00 <span class="old-price">$32.00</span></p>
+                        <a href="Ofertas-Promociones.html#combo-familiar" class="btn btn-promo">Ver Detalles</a>
+                    </div>
+                </div>
+                
+                <div class="promo-card animate__animated animate__zoomIn animate__delay-1s">
+                    <div class="promo-content">
+                        <span class="promo-badge">-20%</span>
+                        <h3>Martes de Arroz</h3>
+                        <p>Todos los martes 20% de descuento en arroces</p>
+                        <a href="Ofertas-Promociones.html#martes-arroz" class="btn btn-promo">Aprovechar</a>
+                    </div>
+                </div>
+                
+                <div class="promo-card animate__animated animate__zoomIn animate__delay-2s">
+                    <div class="promo-content">
+                        <span class="promo-badge">2x1</span>
+                        <h3>Happy Hour</h3>
+                        <p>De 3pm a 6pm en bebidas seleccionadas</p>
+                        <a href="Ofertas-Promociones.html#happy-hour" class="btn btn-promo">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Video -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Nuestra Pasión por el Arroz</h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video id="restaurant-video" poster="../imagenes/video-poster.jpg" controls>
+                        <source src="../videos/nuestra-cocina.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                    <button class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonios de Clientes -->
     <section class="testimonials">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial">
-                <p>"El mejor arroz que he probado. ¡Totalmente recomendado!"</p>
-                <p class="author">- María G.</p>
-                <p class="rating">⭐⭐⭐⭐⭐</p>
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <p class="section-subtitle">Más de 1,000 clientes satisfechos</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"El mejor arroz que he probado en mi vida. La textura, el sabor, todo es perfecto. ¡Totalmente recomendado!"</p>
+                        <div class="testimonial-author">
+                            <img src="../imagenes/testimonial1.jpg" alt="María González" class="author-img">
+                            <div class="author-info">
+                                <h4>María González</h4>
+                                <p>Cliente frecuente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Rápido, delicioso y a buen precio. El servicio es excelente y siempre llega caliente. ¡Volveré a pedir!"</p>
+                        <div class="testimonial-author">
+                            <img src="../imagenes/testimonial2.jpg" alt="Juan Pérez" class="author-img">
+                            <div class="author-info">
+                                <h4>Juan Pérez</h4>
+                                <p>Primera vez</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Llevo más de 5 años siendo cliente y nunca me decepcionan. Su arroz marinero es una obra de arte culinaria."</p>
+                        <div class="testimonial-author">
+                            <img src="../imagenes/testimonial3.jpg" alt="Carlos Rodríguez" class="author-img">
+                            <div class="author-info">
+                                <h4>Carlos Rodríguez</h4>
+                                <p>Cliente desde 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial">
-                <p>"Rápido, delicioso y a buen precio. ¡Volveré a pedir!"</p>
-                <p class="author">- Juan P.</p>
-                <p class="rating">⭐⭐⭐⭐⭐</p>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots"></div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Estadísticas -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate__animated">
+                    <div class="stat-number" data-count="1500">0</div>
+                    <div class="stat-label">Clientes satisfechos</div>
+                </div>
+                <div class="stat-item animate__animated">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label">Tipos de arroz</div>
+                </div>
+                <div class="stat-item animate__animated">
+                    <div class="stat-number" data-count="10">0</div>
+                    <div class="stat-label">Años de experiencia</div>
+                </div>
+                <div class="stat-item animate__animated">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">% Recomiendan</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Ubicación y Contacto -->
     <section class="location-contact">
-        <h2>Ubicación y Contacto</h2>
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.785244447618!2d-74.083905685237!3d4.638537996633298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3b7c1e1b5f%3A0x1b8b1b1b1b1b1b1b!2sDeleite%20su%20Arroz!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco"
-                width="100%"
-                height="300"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ubicación y Contacto</h2>
+                <p class="section-subtitle">Visítanos o contáctanos para hacer tu pedido</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="map-container animate__animated animate__fadeInLeft">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.785244447618!2d-74.083905685237!3d4.638537996633298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a3b7c1e1b5f%3A0x1b8b1b1b1b1b1b1b!2sDeleite%20su%20Arroz!5e0!3m2!1ses!2sco!4v1620000000000!5m2!1ses!2sco" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="contact-info animate__animated animate__fadeInRight">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <h3>Dirección</h3>
+                            <p>Calle Falsa 123, Ciudad</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <h3>Teléfono</h3>
+                            <p>+57 322 3724043</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <h3>Email</h3>
+                            <p>info@deleitesuarroz.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-detail">
+                            <h3>Horario</h3>
+                            <p>Lunes a Domingo: 10am - 10pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/573223724043" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-info">
-            <p>📍 Dirección: Calle Falsa 123, Ciudad</p>
-            <p>📞 Teléfono: +57 322 3724043</p>
-            <a href="https://wa.me/573223724043" class="btn btn-whatsapp">📲 Contactar por WhatsApp</a>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Suscríbete a nuestro Newsletter</h2>
+                <p>Recibe promociones exclusivas y novedades directamente en tu correo.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn btn-subscribe">Suscribirse</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Pie de Página -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="home.html">Inicio</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                    <li><a href="contactanos.html">Contacto</a></li>
-                </ul>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">
+                        <img src="../imagenes/logo-white.png" alt="Deleite su Arroz">
+                        <h3>Deleite su Arroz</h3>
+                    </div>
+                    <p>Desde 2013 sirviendo los mejores arroces de la ciudad, preparados con ingredientes frescos y mucho amor.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="home.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="contactanos.html">Contacto</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</li>
+                        <li><i class="fas fa-phone-alt"></i> +57 322 3724043</li>
+                        <li><i class="fas fa-envelope"></i> info@deleitesuarroz.com</li>
+                        <li><i class="fas fa-clock"></i> Lunes-Domingo: 10am-10pm</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-legal">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos-condiciones.html">Términos y Condiciones</a></li>
+                        <li><a href="politica-cookies.html">Política de Cookies</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Redes Sociales</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 Deleite su Arroz. Todos los derechos reservados.
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Deleite su Arroz. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Modal de Carrito -->
+    <div class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="cart-close">&times;</button>
+            </div>
+            <div class="cart-body">
+                <div class="cart-items">
+                    <!-- Los ítems del carrito se agregarán aquí dinámicamente -->
+                </div>
+                <div class="cart-total">
+                    <p>Total: <span class="total-amount">$0.00</span></p>
+                </div>
+            </div>
+            <div class="cart-footer">
+                <button class="btn btn-cart-clear">Vaciar Carrito</button>
+                <a href="checkout.html" class="btn btn-cart-checkout">Finalizar Compra</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de carrito flotante -->
+    <div class="cart-floating">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <!-- Botón de ir arriba -->
+    <button class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="../js/home.js"></script>
 </body>

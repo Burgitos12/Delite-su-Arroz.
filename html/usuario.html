@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | Deleite su Arroz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/usuario.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Elegante -->
+        <aside class="sidebar">
+            <div class="brand animate__animated animate__fadeIn">
+                <div class="logo-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h1>Deleite su Arroz</h1>
+            </div>
+            
+            <nav class="menu">
+                <ul>
+                    <li class="active" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Mi Perfil</span>
+                    </li>
+                    <li data-section="orders">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Mis Pedidos</span>
+                    </li>
+                    <li data-section="payments">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Métodos de Pago</span>
+                    </li>
+                    <li data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button id="logout" class="logout-btn animate__animated animate__fadeInUp">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Cerrar Sesión</span>
+            </button>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <!-- Header con animación -->
+            <header class="content-header animate__animated animate__fadeInDown">
+                <div class="welcome-message">
+                    <h2>¡Hola, <span class="user-name">Usuario</span>!</h2>
+                    <p>Gracias por confiar en Deleite su Arroz. ¡Disfruta de nuestros deliciosos platos!</p>
+                </div>
+                <div class="user-badge">
+                    <i class="fas fa-user-check"></i>
+                </div>
+            </header>
+
+            <!-- Sección de Perfil (activa por defecto) -->
+            <section id="profile-section" class="content-section active">
+                <div class="profile-grid">
+                    <!-- Tarjeta de Información -->
+                    <div class="profile-card animate__animated animate__fadeInLeft">
+                        <div class="profile-header">
+                            <div class="avatar-container">
+                                <div class="avatar" id="user-avatar">
+                                    <img src="https://i.pravatar.cc/150?img=5" alt="Avatar">
+                                </div>
+                                <button class="edit-avatar-btn" id="change-avatar">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <h3 id="user-fullname">Carlos Mendoza</h3>
+                            <p class="member-since">Miembro desde: <span>Enero 2023</span></p>
+                        </div>
+                        
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Correo electrónico</h4>
+                                    <p id="user-email">carlos@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Teléfono</h4>
+                                    <p id="user-phone">+1 234 567 890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h4>Dirección</h4>
+                                    <p id="user-address">Calle Principal 123, Ciudad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Acciones -->
+                    <div class="actions-card animate__animated animate__fadeInRight">
+                        <h3 class="card-title">Opciones Rápidas</h3>
+                        <div class="actions-grid">
+                            <button class="action-btn" id="edit-profile">
+                                <div class="action-icon">
+                                    <i class="fas fa-user-edit"></i>
+                                </div>
+                                <span>Editar Perfil</span>
+                            </button>
+                            
+                            <button class="action-btn" id="order-history">
+                                <div class="action-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <span>Historial</span>
+                            </button>
+                            
+                            <button class="action-btn" id="payment-methods">
+                                <div class="action-icon">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <span>Pagos</span>
+                            </button>
+                            
+                            <button class="action-btn" id="security-settings">
+                                <div class="action-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <span>Seguridad</span>
+                            </button>
+                        </div>
+                        
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-value">24</div>
+                                <div class="stat-label">Pedidos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">18</div>
+                                <div class="stat-label">Favoritos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Recompensas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Otras secciones (ocultas inicialmente) -->
+            <section id="orders-section" class="content-section">
+                <!-- Contenido de pedidos se cargará dinámicamente -->
+            </section>
+
+            <section id="payments-section" class="content-section">
+                <!-- Contenido de pagos se cargará dinámicamente -->
+            </section>
+
+            <section id="settings-section" class="content-section">
+                <!-- Contenido de configuración se cargará dinámicamente -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container" id="modal-container">
+            <button class="close-modal" id="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content" id="modal-content">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/usuario.js"></script>
+</body>
+</html>

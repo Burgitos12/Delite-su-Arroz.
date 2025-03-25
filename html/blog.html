@@ -3,203 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Blog - Deleite su Arroz</title>
+    <title>Blog Gastronómico - Deleite su Arroz</title>
     <link rel="stylesheet" href="../css/blog.css">
-    <!-- Font Awesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+            <div class="rice-grain"></div>
+        </div>
+    </div>
 
     <!-- Encabezado -->
     <header class="header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Deleite su Arroz">
-            <h1>Deleite su Arroz</h1>
+            <img src="../images/logo.png" alt="Logo Deleite su Arroz" class="logo-img">
+            <h1 class="logo-text">Deleite su Arroz</h1>
         </div>
         <nav class="nav">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-                <li><a href="contactanos.html">Contacto</a></li>
-                <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <ul class="nav-list">
+                <li><a href="home.html" class="nav-link">Inicio</a></li>
+                <li><a href="menu.html" class="nav-link">Menú</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="Ofertas-Promociones.html" class="nav-link">Ofertas</a></li>
+                <li><a href="reservas.html" class="nav-link">Reservas</a></li>
+                <li><a href="contactanos.html" class="nav-link">Contacto</a></li>
+                <li><a href="sobre-nosotros.html" class="nav-link">Nosotros</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
         <div class="auth-buttons">
-            <a href="iniciar-seccion.html" class="btn">Iniciar Sesión</a>
-            <a href="registrarse.html" class="btn">Registrarse</a>
+            <a href="iniciar-seccion.html" class="btn btn-login">Iniciar Sesión</a>
+            <a href="registrarse.html" class="btn btn-register">Registrarse</a>
         </div>
     </header>
 
-    <!-- Encabezado del Blog -->
-    <header class="blog-header">
-        <h1>Nuestro Blog</h1>
-        <p>Descubre el mundo del arroz</p>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Buscar artículos...">
-            <button id="search-button">Buscar</button>
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Explora Nuestro Blog</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">Descubre los secretos del arroz y la gastronomía</p>
+            <div class="search-container animate__animated animate__fadeIn">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar artículos..." class="search-input">
+                    <button id="search-button" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-tags">
+                    <span>Popular:</span>
+                    <a href="#recetas" class="tag">Recetas</a>
+                    <a href="#historia" class="tag">Historia</a>
+                    <a href="#nutricion" class="tag">Nutrición</a>
+                </div>
+            </div>
         </div>
-        <div class="filters">
-            <span>Filtrar por categoría:</span>
-            <select id="category-filter">
-                <option value="">Todas</option>
-                <option value="recetas">Recetas</option>
-                <option value="historia">Historia</option>
-                <option value="nutricion">Nutrición</option>
-            </select>
-            <select id="order-filter">
-                <option value="">Ordenar por</option>
-                <option value="fecha-asc">Fecha (Más reciente)</option>
-                <option value="fecha-desc">Fecha (Más antiguo)</option>
-            </select>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="currentColor"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="currentColor"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+            </svg>
         </div>
-    </header>
+    </section>
 
-    <!-- Contenido Principal -->
-    <main class="blog-content">
-        <!-- Lista de Artículos -->
-        <section class="article-list">
-            <article class="article" data-category="recetas">
-                <img src="../images/blog1.jpg" alt="Imagen del artículo 1">
-                <div class="article-info">
-                    <h2>Cómo hacer arroz perfecto</h2>
-                    <p class="meta">Publicado el 10/10/2023 por <span class="author">Juan Pérez</span></p>
-                    <p class="excerpt">Descubre cómo preparar el mejor arroz con pollo en casa con estos sencillos pasos.</p>
-                    <a href="#" class="read-more" data-modal="modal1">Leer más</a>
-                </div>
-            </article>
-            <article class="article" data-category="historia">
-                <img src="../images/blog2.jpg" alt="Imagen del artículo 2">
-                <div class="article-info">
-                    <h2>La historia del arroz</h2>
-                    <p class="meta">Publicado el 05/10/2023 por <span class="author">María Gómez</span></p>
-                    <p class="excerpt">La historia del arroz y su importancia en la gastronomía mundial.</p>
-                    <a href="#" class="read-more" data-modal="modal2">Leer más</a>
-                </div>
-            </article>
-            <article class="article" data-category="nutricion">
-                <img src="../images/blog3.jpg" alt="Imagen del artículo 3">
-                <div class="article-info">
-                    <h2>Beneficios del arroz integral</h2>
-                    <p class="meta">Publicado el 01/10/2023 por <span class="author">Carlos Ruiz</span></p>
-                    <p class="excerpt">Los beneficios nutricionales del arroz integral y cómo incorporarlo en tu dieta.</p>
-                    <a href="#" class="read-more" data-modal="modal3">Leer más</a>
-                </div>
-            </article>
-        </section>
-
-        <!-- Barra Lateral -->
+    <!-- Main Content -->
+    <main class="blog-container">
+        <!-- Sidebar -->
         <aside class="sidebar">
-            <!-- Categorías -->
-            <div class="sidebar-box">
-                <h3>Categorías</h3>
-                <div class="categories-grid">
-                    <a href="#" class="category-link" data-category="recetas">Recetas</a>
-                    <a href="#" class="category-link" data-category="historia">Historia</a>
-                    <a href="#" class="category-link" data-category="nutricion">Nutrición</a>
+            <div class="sidebar-widget categories-widget">
+                <h3 class="widget-title">Categorías</h3>
+                <ul class="categories-list">
+                    <li><a href="#recetas" class="category-link active" data-category="all">Todas</a></li>
+                    <li><a href="#recetas" class="category-link" data-category="recetas">Recetas</a></li>
+                    <li><a href="#historia" class="category-link" data-category="historia">Historia</a></li>
+                    <li><a href="#nutricion" class="category-link" data-category="nutricion">Nutrición</a></li>
+                    <li><a href="#tecnicas" class="category-link" data-category="tecnicas">Técnicas</a></li>
+                    <li><a href="#chefs" class="category-link" data-category="chefs">Chefs</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget popular-widget">
+                <h3 class="widget-title">Artículos Populares</h3>
+                <div class="popular-articles">
+                    <article class="popular-article">
+                        <a href="#article1" class="popular-link" data-article="article1">
+                            <img src="../images/blog1-thumb.jpg" alt="Arroz perfecto" class="popular-img">
+                            <div class="popular-info">
+                                <h4>Cómo hacer arroz perfecto</h4>
+                                <span class="popular-views"><i class="fas fa-eye"></i> 1,245</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="popular-article">
+                        <a href="#article2" class="popular-link" data-article="article2">
+                            <img src="../images/blog2-thumb.jpg" alt="Historia del arroz" class="popular-img">
+                            <div class="popular-info">
+                                <h4>La historia del arroz</h4>
+                                <span class="popular-views"><i class="fas fa-eye"></i> 982</span>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="popular-article">
+                        <a href="#article3" class="popular-link" data-article="article3">
+                            <img src="../images/blog3-thumb.jpg" alt="Arroz integral" class="popular-img">
+                            <div class="popular-info">
+                                <h4>Beneficios del arroz integral</h4>
+                                <span class="popular-views"><i class="fas fa-eye"></i> 756</span>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
 
-            <!-- Artículos más leídos -->
-            <div class="sidebar-box">
-                <h3>Artículos más leídos</h3>
-                <div class="popular-articles-grid">
-                    <a href="#" class="popular-link" data-modal="modal1">Cómo hacer arroz perfecto</a>
-                    <a href="#" class="popular-link" data-modal="modal2">La historia del arroz</a>
-                    <a href="#" class="popular-link" data-modal="modal3">Beneficios del arroz integral</a>
-                </div>
+            <div class="sidebar-widget newsletter-widget">
+                <h3 class="widget-title">Newsletter</h3>
+                <p class="newsletter-text">Suscríbete para recibir recetas exclusivas y ofertas especiales.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" class="newsletter-input">
+                    <button type="submit" class="newsletter-btn">Suscribirse</button>
+                </form>
             </div>
 
-            <!-- Síguenos -->
-            <div class="sidebar-box">
-                <h3>Síguenos</h3>
-                <div class="social-links-grid">
-                    <a href="https://www.facebook.com/DeleiteSuArroz/" class="social-link" target="_blank">
-                        <i class="fab fa-facebook-f"></i> Facebook
+            <div class="sidebar-widget social-widget">
+                <h3 class="widget-title">Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/DeleiteSuArroz/" class="social-link fb" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://wa.me/573223724043" class="social-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    <a href="https://www.instagram.com/DeleiteSuArroz/" class="social-link ig" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/573223724043" class="social-link wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.youtube.com/DeleiteSuArroz/" class="social-link yt" target="_blank">
+                        <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
         </aside>
+
+        <!-- Articles Section -->
+        <section class="articles-section">
+            <div class="section-header">
+                <h2 class="section-title">Últimos Artículos</h2>
+                <div class="sort-options">
+                    <span>Ordenar por:</span>
+                    <select id="sort-select" class="sort-select">
+                        <option value="recent">Más recientes</option>
+                        <option value="oldest">Más antiguos</option>
+                        <option value="popular">Más populares</option>
+                        <option value="views">Más vistos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card" data-category="recetas" data-date="2023-10-10" data-views="1245" id="article1">
+                    <div class="article-media">
+                        <img src="../images/blog1.jpg" alt="Cómo hacer arroz perfecto" class="article-img">
+                        <div class="article-category">Recetas</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 10 Oct 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Cómo hacer arroz perfecto</h3>
+                        <p class="article-excerpt">Aprende los secretos para preparar un arroz esponjoso y delicioso cada vez que cocines.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> Juan Pérez</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 1,245</span>
+                        </div>
+                        <a href="articulo-arroz-perfecto.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card" data-category="historia" data-date="2023-10-05" data-views="982" id="article2">
+                    <div class="article-media">
+                        <img src="../images/blog2.jpg" alt="La historia del arroz" class="article-img">
+                        <div class="article-category">Historia</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 5 Oct 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">La historia del arroz</h3>
+                        <p class="article-excerpt">Descubre cómo este humilde grano conquistó el mundo y se convirtió en alimento básico.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> María Gómez</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 982</span>
+                        </div>
+                        <a href="articulo-historia-arroz.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card" data-category="nutricion" data-date="2023-10-01" data-views="756" id="article3">
+                    <div class="article-media">
+                        <img src="../images/blog3.jpg" alt="Beneficios del arroz integral" class="article-img">
+                        <div class="article-category">Nutrición</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 1 Oct 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Beneficios del arroz integral</h3>
+                        <p class="article-excerpt">Por qué deberías considerar cambiar al arroz integral y cómo beneficia tu salud.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> Carlos Ruiz</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 756</span>
+                        </div>
+                        <a href="articulo-arroz-integral.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="article-card" data-category="tecnicas" data-date="2023-09-25" data-views="632" id="article4">
+                    <div class="article-media">
+                        <img src="../images/blog4.jpg" alt="Técnicas de cocción" class="article-img">
+                        <div class="article-category">Técnicas</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 25 Sep 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">5 técnicas de cocción del arroz</h3>
+                        <p class="article-excerpt">Desde hervido hasta al vapor, domina las diferentes formas de cocinar arroz.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> Ana Martínez</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 632</span>
+                        </div>
+                        <a href="articulo-tecnicas-coccion.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card" data-category="recetas" data-date="2023-09-18" data-views="589" id="article5">
+                    <div class="article-media">
+                        <img src="../images/blog5.jpg" alt="Arroz con pollo" class="article-img">
+                        <div class="article-category">Recetas</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 18 Sep 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Receta tradicional de arroz con pollo</h3>
+                        <p class="article-excerpt">La receta auténtica que ha pasado de generación en generación en nuestra familia.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> Laura Díaz</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 589</span>
+                        </div>
+                        <a href="articulo-arroz-pollo.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card" data-category="chefs" data-date="2023-09-10" data-views="487" id="article6">
+                    <div class="article-media">
+                        <img src="../images/blog6.jpg" alt="Chef especialista" class="article-img">
+                        <div class="article-category">Chefs</div>
+                        <div class="article-date">
+                            <i class="far fa-calendar-alt"></i> 10 Sep 2023
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Entrevista con nuestro chef de arroces</h3>
+                        <p class="article-excerpt">Conoce los secretos y pasión detrás de nuestros deliciosos platos de arroz.</p>
+                        <div class="article-meta">
+                            <span class="article-author"><i class="fas fa-user"></i> Pedro Ramírez</span>
+                            <span class="article-views"><i class="fas fa-eye"></i> 487</span>
+                        </div>
+                        <a href="articulo-entrevista-chef.html" class="article-link">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="page-link prev disabled"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link next"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
     </main>
 
-    <!-- Modales -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Cómo hacer arroz perfecto</h2>
-            <p><strong>Descripción:</strong> Aprende a cocinar arroz esponjoso y delicioso con esta receta paso a paso.</p>
-            <p><strong>Ingredientes:</strong></p>
-            <ul>
-                <li>1 taza de arroz</li>
-                <li>2 tazas de agua</li>
-                <li>Sal al gusto</li>
-            </ul>
-            <p><strong>Instrucciones:</strong></p>
-            <ol>
-                <li>Lava el arroz hasta que el agua salga clara.</li>
-                <li>En una olla, agrega el arroz, el agua y la sal.</li>
-                <li>Cocina a fuego medio hasta que el agua se evapore.</li>
-                <li>Tapa la olla y deja reposar durante 5 minutos.</li>
-                <li>¡Sirve y disfruta!</li>
-            </ol>
-        </div>
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab-btn" id="fab-btn">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </div>
 
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>La historia del arroz</h2>
-            <p><strong>Descripción:</strong> Desde sus orígenes en Asia hasta su expansión global.</p>
-            <p>El arroz es uno de los alimentos más antiguos y consumidos en el mundo. Se cree que su cultivo comenzó en China hace más de 7,000 años. Desde allí, se expandió a India, Japón y el resto del mundo. Hoy en día, el arroz es un alimento básico en más de 100 países.</p>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Beneficios del arroz integral</h2>
-            <p><strong>Descripción:</strong> Por qué el arroz integral es más saludable que el arroz blanco.</p>
-            <p>El arroz integral es una excelente fuente de fibra, vitaminas y minerales. A diferencia del arroz blanco, conserva su salvado y germen, lo que lo hace más nutritivo. Algunos de sus beneficios incluyen:</p>
-            <ul>
-                <li>Mejora la digestión.</li>
-                <li>Ayuda a controlar el peso.</li>
-                <li>Reduce el riesgo de enfermedades cardíacas.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Pie de Página -->
+    <!-- Footer -->
     <footer class="blog-footer">
-        <div class="footer-content">
-            <div class="social-media">
-                <h3>Redes Sociales</h3>
-                <a href="https://www.facebook.com/DeleiteSuArroz/" target="_blank">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="https://wa.me/573223724043" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo-white.png" alt="Deleite su Arroz" class="footer-logo">
+                <p class="footer-slogan">La mejor experiencia en arroces desde 2010</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573223724043" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.youtube.com/DeleiteSuArroz/" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <div class="subscription">
-                <h3>Suscríbete a nuestro boletín</h3>
-                <form class="subscription-form">
-                    <input type="email" placeholder="Tu correo electrónico">
-                    <button type="submit">Suscribirse</button>
+
+            <div class="footer-links">
+                <h4 class="links-title">Enlaces rápidos</h4>
+                <ul class="links-list">
+                    <li><a href="home.html">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Ofertas-Promociones.html">Ofertas</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contactanos.html">Contacto</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 class="contact-title">Contacto</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 123 #45-67, Bogotá</p>
+                    <p><i class="fas fa-phone-alt"></i> +57 322 3724043</p>
+                    <p><i class="fas fa-envelope"></i> info@deleitesuarroz.com</p>
+                    <p><i class="fas fa-clock"></i> Lun-Vie: 11am - 9pm<br>Sab-Dom: 12pm - 10pm</p>
+                </div>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4 class="newsletter-title">Newsletter</h4>
+                <p class="newsletter-text">Suscríbete para recibir nuestras últimas recetas y promociones.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" class="newsletter-input">
+                    <button type="submit" class="newsletter-btn">Suscribirse</button>
                 </form>
             </div>
-            <div class="contact-info">
-                <h3>Contacto</h3>
-                <p>Email: info@deleitesuarroz.com</p>
-                <p>Teléfono: +57 322 3724043</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2023 Deleite su Arroz. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="politica-privacidad.html">Política de privacidad</a>
+                <a href="terminos-condiciones.html">Términos y condiciones</a>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="../js/blog.js"></script>
 </body>
 </html>
